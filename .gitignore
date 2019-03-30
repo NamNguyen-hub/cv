@@ -1,16 +1,6 @@
-# Ignore products
-
-
-
-# History files
-
 .Rhistory
-
 .Rapp.history
-
-
-
-
-# Session Data files
-
 .RData
+.Rproj.user
+*.out
+*.aux

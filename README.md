@@ -1,1 +1,6 @@
-Email me with questions jessicaleighburnett@gmail.com
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# cv
+
+RMarkdown and latex template for CV / resume
