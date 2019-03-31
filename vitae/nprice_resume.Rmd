@@ -1,82 +1,138 @@
 ---
 name: Nathaniel Price
-position: "Post-Doctoral Research Associate"
-address: "School of Natural Resources, University of Nebraska"
+position: "Data Scientist"
+address: "335 S. 46th St. Lincon, NE 68510"
 phone: +1 904 315 2486
-www: mariecurie.com
-email: "NatBPrice@gmail.com"
+email: "natbprice@gmail.com"
 twitter: DayduhScientist
 github: natbprice
 linkedin: natbprice
 date: "`r format(Sys.time(), '%B %Y')`"
-output: vitae::hyndman
+output: function(...) vitae::cv_document(..., template = "pricetemplate.tex", citation_package = "biblatex")
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE)
+
 library(tidyverse)
-library(RefManageR)
 library(vitae)
-library(rorcid)
 library(lubridate)
 library(glue)
-# source("baretable.R")
 ```
 
-# Education and qualifications
+```{r loadData}
 
-```{r orcid, eval = F}
-orcid_data <- rorcid::orcid_educations("0000-0002-6450-617X")$`0000-0002-6450-617X`
+# Education
+education <- read_csv("education.csv",
+                      locale = locale(encoding = 'ISO-8859-1'),
+                      col_types = cols(
+                        begin = col_date("%m/%d/%y"),
+                        end = col_date("%m/%d/%y")
+                        )
+                      )
 
-orcid_data$`education-summary` %>%
-  select(`role-title`,
-  `start-date.year.value`,
-  `end-date.year.value`,
-  organization.name, 
-  organization.address.city) %>% 
-  dput()
+# Job titles
+job.titles <- read_csv("job-titles.csv",
+                      locale = locale(encoding = 'ISO-8859-1'),
+                      col_types = cols(
+                        begin = col_date("%m/%d/%y"),
+                        end = col_date("%m/%d/%y")
+                        )
+)
+
+# Job descriptions
+job.descriptions <- read_csv("job-descriptions.csv",
+                      locale = locale(encoding = 'ISO-8859-1')
+)
+
 ```
 
-```{r, results = "asis"}
-education <- structure(list(`role-title` = c("Ph.D. Mechanical Engineering", 
-"Ph.D. Mechanical Engineering", "Graduate Certificate in Scientific Computing", 
-"M.S. Mechanical Engineering", "B.S. Mechanical Engineering"), 
-    `start-date.year.value` = c("2012", "2012", "2012", "2012", 
-    "2008"), `end-date.year.value` = c("2016", "2016", "2014", 
-    "2014", "2012"), organization.name = c("Ecole des Mines de Saint-Etienne", 
-    "University of Florida", "University of Florida", "University of Florida", 
-    "University of Florida"), organization.address.city = c("Saint-Etienne", 
-    "Gainesville", "Gainesville", "Gainesville", "Gainesville"
-    )), class = "data.frame", row.names = c(NA, 5L))
+# Education
 
+```{r education, results = "asis"}
 education %>%
   detailed_entries(
-    what = `role-title`,
-    when = glue::glue("{`start-date.year.value`} - {`end-date.year.value`}"),
-    with = organization.name,
-    where = organization.address.city
-  )
-```
-
-
-# Experience
-
-```{r}
-tribble(
-  ~start, ~end, ~position, ~employer, ~city, ~region, ~country,
-  "2011/05/01", "2012/05/01", "Undergraduate Research Assistant", 
-  "University of Florida", "Gainesville", "Florida", "US",
-  "2010/08/01", "2011/01/01", "Launch Engineer Intern", 
-  "SpaceX", "Cape Canveral", "Florida", "US",
-  "2005/01/01", "2010/07/31", "Engineer Intern", "E&S Consulting, Inc.", 
-  "St. Augustine", "Florida", "US") %>% 
-  mutate(start = as.Date(start),
-         end = as.Date(end)) %>%
-  detailed_entries(
-    what = position,
-    when = glue("{year(start)} - {year(end)}"),
-    with = employer,
+    what = degree,
+    when = as.character(glue("{year(begin)} - {year(end)}")),
+    with = university,
     where = glue("{city}, {region}, {country}")
   )
 ```
 
+# Experience
+
+```{r experience1}
+job.titles %>% 
+  left_join(job.descriptions) %>% 
+  filter(jobId >= 2) %>% 
+  detailed_entries(
+    what = position,
+    when = as.character(
+      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")),
+    with = employer,
+    where = glue("{city}, {region}, {country}"),
+    why = accomplishments)
+
+```
+
+```{r experience2}
+
+job.titles %>% 
+  left_join(job.descriptions) %>% 
+  filter(jobId < 2) %>% 
+  detailed_entries(
+    what = position,
+    when = as.character(
+      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")),
+    with = employer,
+    where = glue("{city}, {region}, {country}"),
+    why = accomplishments)
+```
+
+
+# Publications
+
+```{r pubSetup}
+posters <- c("price_design_2012", "price_effects_2012")
+software <- c("price_radsets_2019", "price_tvdiff_2019")
+```
+
+
+## Journal Articles and Book Chapters
+```{r journalPapers}
+bibliography_entries("publications.bib") %>%
+  filter(bibtype %in% c("Article", "InCollection")) %>%
+  arrange(desc(year), author)
+```
+
+## Conference Papers
+```{r conferencePapers}
+bibliography_entries("publications.bib") %>%
+  filter(bibtype %in% c("InProceedings"),
+         !key %in% posters) %>%
+  arrange(desc(year), author)
+```
+
+## Oral Presentations
+```{r oralPresentations}
+bibliography_entries("publications.bib") %>%
+  filter(bibtype == "Misc",
+         !key %in% software) %>%
+  arrange(desc(year), author)
+```
+
+## Conference Posters
+```{r posters}
+bibliography_entries("publications.bib") %>%
+  filter(key %in% posters) %>%
+  arrange(desc(year), author)
+```
+
+## Software (Github: natbprice)
+```{r software}
+bibliography_entries("publications.bib") %>%
+  filter(key %in% software) %>%
+  arrange(desc(year), author)
+```
