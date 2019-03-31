@@ -1,0 +1,82 @@
+---
+name: Nathaniel Price
+position: "Post-Doctoral Research Associate"
+address: "School of Natural Resources, University of Nebraska"
+phone: +1 904 315 2486
+www: mariecurie.com
+email: "NatBPrice@gmail.com"
+twitter: DayduhScientist
+github: natbprice
+linkedin: natbprice
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::hyndman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(RefManageR)
+library(vitae)
+library(rorcid)
+library(lubridate)
+library(glue)
+# source("baretable.R")
+```
+
+# Education and qualifications
+
+```{r orcid, eval = F}
+orcid_data <- rorcid::orcid_educations("0000-0002-6450-617X")$`0000-0002-6450-617X`
+
+orcid_data$`education-summary` %>%
+  select(`role-title`,
+  `start-date.year.value`,
+  `end-date.year.value`,
+  organization.name, 
+  organization.address.city) %>% 
+  dput()
+```
+
+```{r, results = "asis"}
+education <- structure(list(`role-title` = c("Ph.D. Mechanical Engineering", 
+"Ph.D. Mechanical Engineering", "Graduate Certificate in Scientific Computing", 
+"M.S. Mechanical Engineering", "B.S. Mechanical Engineering"), 
+    `start-date.year.value` = c("2012", "2012", "2012", "2012", 
+    "2008"), `end-date.year.value` = c("2016", "2016", "2014", 
+    "2014", "2012"), organization.name = c("Ecole des Mines de Saint-Etienne", 
+    "University of Florida", "University of Florida", "University of Florida", 
+    "University of Florida"), organization.address.city = c("Saint-Etienne", 
+    "Gainesville", "Gainesville", "Gainesville", "Gainesville"
+    )), class = "data.frame", row.names = c(NA, 5L))
+
+education %>%
+  detailed_entries(
+    what = `role-title`,
+    when = glue::glue("{`start-date.year.value`} - {`end-date.year.value`}"),
+    with = organization.name,
+    where = organization.address.city
+  )
+```
+
+
+# Experience
+
+```{r}
+tribble(
+  ~start, ~end, ~position, ~employer, ~city, ~region, ~country,
+  "2011/05/01", "2012/05/01", "Undergraduate Research Assistant", 
+  "University of Florida", "Gainesville", "Florida", "US",
+  "2010/08/01", "2011/01/01", "Launch Engineer Intern", 
+  "SpaceX", "Cape Canveral", "Florida", "US",
+  "2005/01/01", "2010/07/31", "Engineer Intern", "E&S Consulting, Inc.", 
+  "St. Augustine", "Florida", "US") %>% 
+  mutate(start = as.Date(start),
+         end = as.Date(end)) %>%
+  detailed_entries(
+    what = position,
+    when = glue("{year(start)} - {year(end)}"),
+    with = employer,
+    where = glue("{city}, {region}, {country}")
+  )
+```
+

@@ -1,8 +1,7 @@
 ---
 nocite: "@*"
 output: 
-  pdf_document:
-    latex_engine: pdflatex
+  github_document:
     template: cv-latex.tex
 bibliography: publications.bib
 geometry: margin=.7in
