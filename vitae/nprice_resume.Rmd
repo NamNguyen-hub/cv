@@ -49,6 +49,11 @@ job.descriptions <- read_csv("job-descriptions.csv",
                       locale = locale(encoding = 'ISO-8859-1')
 )
 
+# Awards
+awards <- read_csv("awards.csv",
+                      locale = locale(encoding = 'ISO-8859-1')
+)
+
 ```
 
 # Education
@@ -65,10 +70,9 @@ education %>%
 
 # Experience
 
-```{r experience1}
+```{r experience}
 job.titles %>% 
   left_join(job.descriptions) %>% 
-  filter(jobId >= 2) %>% 
   detailed_entries(
     what = position,
     when = as.character(
@@ -79,18 +83,13 @@ job.titles %>%
 
 ```
 
-```{r experience2}
+# Awards
+```{r awards}
 
-job.titles %>% 
-  left_join(job.descriptions) %>% 
-  filter(jobId < 2) %>% 
-  detailed_entries(
-    what = position,
-    when = as.character(
-      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")),
-    with = employer,
-    where = glue("{city}, {region}, {country}"),
-    why = accomplishments)
+awards %>% 
+  brief_entries(
+    what = title,
+    when = year)
 ```
 
 
