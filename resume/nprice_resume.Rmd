@@ -108,7 +108,7 @@ bibliography_entries("publications.bib") %>%
   arrange(desc(year), author)
 ```
 
-## Conference Papers
+## Conference Papers with Oral Presentations
 ```{r conferencePapers}
 bibliography_entries("publications.bib") %>%
   filter(bibtype %in% c("InProceedings"),
@@ -116,7 +116,7 @@ bibliography_entries("publications.bib") %>%
   arrange(desc(year), author)
 ```
 
-## Oral Presentations
+## Oral Presentations Only
 ```{r oralPresentations}
 bibliography_entries("publications.bib") %>%
   filter(bibtype == "Misc",
