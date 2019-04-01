@@ -181,10 +181,44 @@ $endfor$
 \RaggedRight
 \sloppy
 
+% Use fontawesome. Note: you'll need TeXLive 2015. Update.
+$if(fontawesome)$\usepackage{fontawesome}$endif$
+
+\def\maketitle{
+\vspace*{-1.4cm}
+\thispagestyle{empty}
+\centerline{\huge \bf $name$}
+
+%job title
+$if(jobtitle)$\moveleft.5\hoffset\centerline{$jobtitle$}$endif$
+%address
+$if(address)$\moveleft.5\hoffset\centerline{$address$}$endif$
+\moveleft.5\hoffset\centerline{ 
+%github
+$if(github)$$if(fontawesome)$\faGithub \hspace{1 mm}$else$\emph{Github:}$endif$ \href{http://github.com/$github$}{\color{black} $github$} \hspace{1 mm} $endif$  
+%github
+$if(twitter)$$if(fontawesome)$\faTwitter \hspace{1 mm}$else$\emph{Twitter:}$endif$ \href{http://twitter.com/$twitter$}{\color{black} $twitter$} \hspace{1 mm} $endif$  
+%phone
+$if(phone)$$if(fontawesome)$ \faMobile \hspace{1 mm}$else$\emph{Phone:}$endif$  $phone$  \hspace{1 mm} $endif$ 
+%email
+$if(email)$$if(fontawesome)$\faEnvelopeO \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\color{black} $email$} \hspace{1 mm}$endif$ 
+%linkedin
+$if(linkedin)$\faicon{linkedin} \hspace{1 mm} \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}$endif$
+%scholar
+$if(scholar)$\faicon{google} \hspace{1 mm} \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}$endif$%
+%orcid
+$if(orcid)$\faicon{openid} \hspace{1 mm} \href{https://orcid.org/$orcid$}{$orcid$}$endif$%
+%website
+$if(web)$$if(fontawesome)$\faGlobe \hspace{1 mm}$else$\emph{Web:}$endif$ \href{http://$web$}{\tt $web$}  $endif$ $if(updated)$ | \emph{Updated:} \today$endif$}
+
+\vspace{2 mm}
+\hrule
+}
+
 % Header and footer
 \pagestyle{fancy}
 \makeatletter
-\lhead{\sf\textcolor[gray]{0.4}{$if(docname)$$docname$$else$Curriculum Vitae$endif$: \@name}}
+\lhead{\sf\textcolor[gray]{0.4}{$if(docname)$$docname$$else$Curriculum Vitae$endif$: $name$}}
 \rhead{\sf\textcolor[gray]{0.4}{\thepage}}
 \cfoot{}
 \def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
@@ -193,42 +227,44 @@ $endfor$
 % Header box
 \usepackage{tabularx}
 
-\makeatletter
+% \makeatletter
 \def\name#1{\def\@name{#1}}
-\def\info#1{\def\@info{#1}}
-\makeatother
-\newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
-
-\usepackage{calc}
-\newlength{\headerboxwidth}
-\setlength{\headerboxwidth}{\textwidth}
-%\addtolength{\headerboxwidth}{0.2cm}
-\makeatletter
-\def\maketitle{
-\thispagestyle{plain}
-\vspace*{-1.4cm}
-\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
-\hbox to 0.98\textwidth{\begin{tabular}{l}
-\\[-0.3cm]
-\LARGE\textbf{\@name}
-$if(position)$\\[0.1cm]\large $position$\\[0.6cm]$else$\\[0.7cm]$endif$
-\normalsize\textbf{$if(docname)$$docname$$else$Curriculum Vitae$endif$}\\
-\normalsize $if(date)$$date$$else$\today$endif$
-\end{tabular}
-\hfill\hbox{\fontsize{9}{12}\sf
-\begin{tabular}{@{}rl@{}}
-\@info
-\end{tabular}}}\hfil
-}
-\vspace*{0.2cm}}
-\makeatother
-
+% \def\info#1{\def\@info{#1}}
+% \makeatother
+% \newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
+% 
+% \usepackage{calc}
+% \newlength{\headerboxwidth}
+% \setlength{\headerboxwidth}{\textwidth}
+% %\addtolength{\headerboxwidth}{0.2cm}
+% \makeatletter
+% \def\maketitle{
+% \thispagestyle{plain}
+% \vspace*{-1.4cm}
+% \shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+% \hbox to 0.98\textwidth{\begin{tabular}{l}
+% \\[-0.3cm]
+% \LARGE\textbf{\@name}
+% $if(position)$\\[0.1cm]\large $position$\\[0.6cm]$else$\\[0.7cm]$endif$
+% \normalsize\textbf{$if(docname)$$docname$$else$Curriculum Vitae$endif$}\\
+% \normalsize $if(date)$$date$$else$\today$endif$
+% \end{tabular}
+% \hfill\hbox{\fontsize{9}{12}\sf
+% \begin{tabular}{@{}rl@{}}
+% \@info
+% \end{tabular}}}\hfil
+% }
+% \vspace*{0.2cm}}
+% \makeatother
+% 
 % Section headings
 \titlelabel{}
 \titlespacing{\section}{0pt}{1.5ex}{0.5ex}
-\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
-\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
+\titleformat*{\section}{\large\sf\bfseries}
+\titleformat*{\subsection}{\sf\bfseries}
 \titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% \renewcommand\maketitle{}
 
 % Miscellaneous dimensions
 \setlength{\parskip}{0ex}
@@ -248,18 +284,18 @@ $if(position)$\\[0.1cm]\large $position$\\[0.6cm]$else$\\[0.7cm]$endif$
 %\usepackage[t1,scale=0.86]{sourcecodepro}
 
 \name{$name$}
-\def\imagetop#1{\vtop{\null\hbox{#1}}}
-\info{%
-$if(address)$\raisebox{-0.05cm}{\imagetop{\faicon{map-marker}}} &  \imagetop{\begin{tabular}{@{}l@{}}$address$\end{tabular}}\\$endif$ %
-$if(www)$\faicon{home} & \href{http://$www$}{$www$}\\$endif$% %
-$if(phone)$\faicon{phone} & $phone$\\$endif$% 
-$if(email)$\faicon{envelope} & $email$\\$endif$%
-$if(twitter)$\faicon{twitter} & \href{https://twitter.com/$twitter$}{@$twitter$}\\$endif$%
-$if(github)$\faicon{github} & \href{https://github.com/$github$}{$github$}\\$endif$%
-$if(linkedin)$\faicon{linkedin} & \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}\\$endif$%
-$if(scholar)$\faicon{google} & \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}\\$endif$%
-$if(orcid)$\faicon{openid} & \href{https://orcid.org/$orcid$}{$orcid$}\\$endif$%
-}
+% \def\imagetop#1{\vtop{\null\hbox{#1}}}
+% \info{%
+% $if(address)$\raisebox{-0.05cm}{\imagetop{\faicon{map-marker}}} &  \imagetop{\begin{tabular}{@{}l@{}}$address$\end{tabular}}\\$endif$ %
+% $if(www)$\faicon{home} & \href{http://$www$}{$www$}\\$endif$% %
+% $if(phone)$\faicon{phone} & $phone$\\$endif$% 
+% $if(email)$\faicon{envelope} & $email$\\$endif$%
+% $if(twitter)$\faicon{twitter} & \href{https://twitter.com/$twitter$}{@$twitter$}\\$endif$%
+% $if(github)$\faicon{github} & \href{https://github.com/$github$}{$github$}\\$endif$%
+% $if(linkedin)$\faicon{linkedin} & \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}\\$endif$%
+% $if(scholar)$\faicon{google} & \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}\\$endif$%
+% $if(orcid)$\faicon{openid} & \href{https://orcid.org/$orcid$}{$orcid$}\\$endif$%
+% }
 
 
 %\usepackage{inconsolata}
