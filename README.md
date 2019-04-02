@@ -5,8 +5,9 @@
 
 RMarkdown code for building CV and resumes from education, experience,
 and awards stored as CSV files and publications stored as BibTeX file.
-Code depends on vitae package. Template is modified version of
-vitae::hyndman.
+Code depends on vitae package. Template is combination of vitae::hyndman
+and template by Steven Miller
+(<http://svmiller.com/blog/2016/03/svm-r-markdown-cv/>).
 
 # Example
 
