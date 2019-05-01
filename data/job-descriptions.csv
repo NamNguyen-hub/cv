@@ -1,12 +1,12 @@
-jobId,position,employer,accomplishments
-7,Post-doctoral Research Associate,University of Nebraska-Lincoln,"Developed new method of analyzing repeat-purchase data to incorporate spatial, temporal, and demographic covariates into analysis of 1.2 million purchase records"
-7,Post-doctoral Research Associate,University of Nebraska-Lincoln,Built exploratory data analysis web application in R for SQL customer database (4 GB) to provide interactive visualizations and export data summaries and graphics
-6,Graduate Research Assistant,University of Florida,"Integrated machine learning (e.g., Gaussian process), optimization, and uncertainty propagation to design engineering systems considering future decision making process"
-6,Graduate Research Assistant,University of Florida,Collaboratively developed optimization-based method for The NASA Langley Multidisciplinary Uncertainty Quantification Challenge (2014)
-5,Ph.D. Student Researcher,ONERA,Developed a novel method for optimal design of sounding rocket under uncertainty that incorporated risk of future redesign into design optimization
-4,Undergraduate Research Assistant,University of Florida,Developed Python code for parameterized finite element modeling of rigid sternal fixation
-4,Undergraduate Research Assistant,University of Florida,Analyzed effects of patient variability and plate designs on stability of sternal fixation
-3,Launch Engineer Intern,SpaceX,Performed maintenance of launch vehicle ground systems
-3,Launch Engineer Intern,SpaceX,Assisted in rollout and launch of Falcon 9 and Dragon spacecraft
-2,Engineer Intern,"E&S Consulting, Inc.","Assisted with failure analysis investigations (inspections, materials testing, reports, research)"
-1,Undergraduate Research Assistant,University of Florida,Developed Matlab code for compliance correction of compression / tensile strength test data
+jobId,position,employer,category,descId,accomplishments
+7,Post-doctoral Research Associate,University of Nebraska-Lincoln,"data science, marketing",a,"Developed new method of analyzing repeat-purchase data to incorporate spatial, temporal, and demographic covariates into analysis of 1.2 million purchase records"
+7,Post-doctoral Research Associate,University of Nebraska-Lincoln,"data science, marketing",b,Built exploratory data analysis web application in R for SQL customer database (4 GB) to provide interactive visualizations and export data summaries and graphics
+6,Graduate Research Assistant,University of Florida,"data science, engineering",a,"Integrated machine learning (e.g., Gaussian process), optimization, and uncertainty propagation to design engineering systems considering future decision making process"
+6,Graduate Research Assistant,University of Florida,"data science, engineering",b,Collaboratively developed optimization-based method for The NASA Langley Multidisciplinary Uncertainty Quantification Challenge (2014)
+5,Ph.D. Student Researcher,ONERA,"data science, engineering",a,Developed a novel method for optimal design of sounding rocket under uncertainty that incorporated risk of future redesign into design optimization
+4,Undergraduate Research Assistant,University of Florida,"data science, engineering",a,Developed Python code for parameterized finite element modeling of rigid sternal fixation
+4,Undergraduate Research Assistant,University of Florida,"data science, engineering",b,Analyzed effects of patient variability and plate designs on stability of sternal fixation
+3,Launch Engineer Intern,SpaceX,engineering,a,Performed maintenance of launch vehicle ground systems
+3,Launch Engineer Intern,SpaceX,engineering,b,Assisted in rollout and launch of Falcon 9 and Dragon spacecraft
+2,Engineer Intern,"E&S Consulting, Inc.",engineering,a,"Assisted with failure analysis investigations (inspections, materials testing, reports, research)"
+1,Undergraduate Research Assistant,University of Florida,data science,a,Developed Matlab code for compliance correction of compression / tensile strength test data
