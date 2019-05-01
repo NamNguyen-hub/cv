@@ -14,6 +14,9 @@ output: function(...) vitae::cv_document(..., template = "pricetemplate.tex", ci
 ---
 
 ```{r setup, include=FALSE}
+# To save log files
+# rmarkdown::render("resume/nprice_resume.Rmd", clean = FALSE)
+
 knitr::opts_chunk$set(echo = FALSE, 
                       warning = FALSE, 
                       message = FALSE)
@@ -56,7 +59,7 @@ awards <- read_csv("awards.csv")
 education %>%
   detailed_entries(
     what = degree,
-    when = as.character(glue("{year(begin)} - {year(end)}")),
+    when = year(end),
     with = university,
     where = glue("{city}, {region}, {country}")
   )
@@ -66,7 +69,13 @@ education %>%
 
 ```{r experience}
 job.titles %>% 
+  # Only jobs that ended less than 5 years ago
+  filter(is.na(end) | interval(end, Sys.Date())/years(1) <= 5) %>%
+  # Join job descriptions
   left_join(job.descriptions) %>% 
+  # Arrange by descending begin date
+  arrange(desc(begin)) %>% 
+  # Format as detailed entries
   detailed_entries(
     what = position,
     when = as.character(
@@ -77,57 +86,51 @@ job.titles %>%
 
 ```
 
-# Awards
+
+# Select Awards
 ```{r awards}
 
 awards %>% 
+  filter(grepl("BMES|Knox", title)) %>% 
   brief_entries(
     what = title,
     when = year)
 ```
 
 
-# Publications
+# Select Publications
 
 ```{r pubSetup}
 posters <- c("price_design_2012", "price_effects_2012")
 software <- c("price_radsets_2019", "price_tvdiff_2019")
 ```
 
-
-## Journal Articles and Book Chapters
-```{r journalPapers}
+```{r selectPubs}
 bibliography_entries("publications.bib") %>%
-  filter(bibtype %in% c("Article", "InCollection")) %>%
+  filter(key %in% c("price_application_2019",
+                    "balesdent_advanced_2016")) %>% 
   arrange(desc(year), author)
 ```
 
-## Conference Papers with Oral Presentations
-```{r conferencePapers}
-bibliography_entries("publications.bib") %>%
-  filter(bibtype %in% c("InProceedings"),
-         !key %in% posters) %>%
-  arrange(desc(year), author)
-```
+# Software
 
-## Oral Presentations Only
-```{r oralPresentations}
-bibliography_entries("publications.bib") %>%
-  filter(bibtype == "Misc",
-         !key %in% software) %>%
-  arrange(desc(year), author)
-```
-
-## Conference Posters
-```{r posters}
-bibliography_entries("publications.bib") %>%
-  filter(key %in% posters) %>%
-  arrange(desc(year), author)
-```
-
-## Software (Github: natbprice)
 ```{r software}
 bibliography_entries("publications.bib") %>%
   filter(key %in% software) %>%
   arrange(desc(year), author)
+```
+
+# Previous Experience
+```{r}
+job.titles %>% 
+  # Jobs that ended more than 5 years ago
+  filter(interval(end, Sys.Date())/years(1) > 5) %>%
+  # Arrange by descending begin date
+  arrange(desc(begin)) %>% 
+  # Format as brief entries
+  brief_entries(
+    what = glue("{position}, {employer}, {city}, {region}, {country}"),
+    when = as.character(
+      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")))
+
 ```
