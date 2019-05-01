@@ -30,7 +30,7 @@ library(glue)
 ```{r loadData}
 
 # Education
-education <- read_csv("education.csv",
+education <- read_csv("../data/education.csv",
                       col_types = cols(
                         begin = col_date("%m/%d/%y"),
                         end = col_date("%m/%d/%y")
@@ -38,7 +38,7 @@ education <- read_csv("education.csv",
                       )
 
 # Job titles
-job.titles <- read_csv("job-titles.csv",
+job.titles <- read_csv("../data/job-titles.csv",
                       col_types = cols(
                         begin = col_date("%m/%d/%y"),
                         end = col_date("%m/%d/%y")
@@ -46,10 +46,10 @@ job.titles <- read_csv("job-titles.csv",
 )
 
 # Job descriptions
-job.descriptions <- read_csv("job-descriptions.csv")
+job.descriptions <- read_csv("../data/job-descriptions.csv")
 
 # Awards
-awards <- read_csv("awards.csv")
+awards <- read_csv("../data/awards.csv")
 
 ```
 
