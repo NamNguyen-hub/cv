@@ -28,7 +28,6 @@ library(glue)
 
 # Education
 education <- read_csv("education.csv",
-                      locale = locale(encoding = 'ISO-8859-1'),
                       col_types = cols(
                         begin = col_date("%m/%d/%y"),
                         end = col_date("%m/%d/%y")
@@ -37,7 +36,6 @@ education <- read_csv("education.csv",
 
 # Job titles
 job.titles <- read_csv("job-titles.csv",
-                      locale = locale(encoding = 'ISO-8859-1'),
                       col_types = cols(
                         begin = col_date("%m/%d/%y"),
                         end = col_date("%m/%d/%y")
@@ -45,14 +43,10 @@ job.titles <- read_csv("job-titles.csv",
 )
 
 # Job descriptions
-job.descriptions <- read_csv("job-descriptions.csv",
-                      locale = locale(encoding = 'ISO-8859-1')
-)
+job.descriptions <- read_csv("job-descriptions.csv")
 
 # Awards
-awards <- read_csv("awards.csv",
-                      locale = locale(encoding = 'ISO-8859-1')
-)
+awards <- read_csv("awards.csv")
 
 ```
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  1 APR 2019 08:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  1 MAY 2019 11:54
 entering extended mode
 **./nprice_resume.tex
 (nprice_resume.tex
@@ -1257,8 +1257,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 382.
  ) 
 Here is how much of TeX's memory you used:
  31311 strings out of 492945
- 543063 string characters out of 3135508
- 983070 words of memory out of 3000000
+ 543078 string characters out of 3135508
+ 983073 words of memory out of 3000000
  34848 multiletter control sequences out of 15000+200000
  601389 words of font info for 79 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
