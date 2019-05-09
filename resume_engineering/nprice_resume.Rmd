@@ -1,0 +1,136 @@
+---
+name: Nathaniel Price
+docname: "Resume"
+fontawesome: yes
+position: "Data Scientist"
+address: "335 S. 46th St. Lincon, NE 68510"
+phone: +1 904 315 2486
+email: "natbprice@gmail.com"
+twitter: DayduhScientist
+github: natbprice
+linkedin: natbprice
+date: "`r format(Sys.time(), '%B %Y')`"
+output: function(...) vitae::cv_document(..., template = "pricetemplate.tex", citation_package = "biblatex")
+---
+
+```{r setup, include=FALSE}
+# To save log files
+# rmarkdown::render("resume/nprice_resume.Rmd", clean = FALSE)
+
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE)
+
+library(tidyverse)
+library(vitae)
+library(lubridate)
+library(glue)
+```
+
+```{r loadData}
+
+# Education
+education <- read_csv("../data/education.csv",
+                      col_types = cols(
+                        begin = col_date("%m/%d/%y"),
+                        end = col_date("%m/%d/%y")
+                        )
+                      )
+
+# Job titles
+job.titles <- read_csv("../data/job-titles.csv",
+                      col_types = cols(
+                        begin = col_date("%m/%d/%y"),
+                        end = col_date("%m/%d/%y")
+                        )
+)
+
+# Job descriptions
+job.descriptions <- read_csv("../data/job-descriptions.csv")
+
+# Awards
+awards <- read_csv("../data/awards.csv")
+
+```
+
+# Education
+
+```{r education, results = "asis"}
+education %>%
+  detailed_entries(
+    what = degree,
+    when = year(end),
+    with = university,
+    where = glue("{city}, {region}, {country}")
+  )
+```
+
+# Experience
+
+```{r experience}
+job.titles %>% 
+  # Only jobs that ended less than 5 years ago
+  filter(is.na(end) | interval(end, Sys.Date())/years(1) <= 5) %>%
+  # Join job descriptions
+  left_join(job.descriptions) %>% 
+  # Arrange by descending begin date
+  arrange(desc(begin)) %>% 
+  # Format as detailed entries
+  detailed_entries(
+    what = position,
+    when = as.character(
+      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")),
+    with = employer,
+    where = glue("{city}, {region}, {country}"),
+    why = accomplishments)
+
+```
+
+
+# Select Awards
+```{r awards}
+
+awards %>% 
+  filter(grepl("BMES|Knox", title)) %>% 
+  brief_entries(
+    what = title,
+    when = year)
+```
+
+
+# Select Publications
+
+```{r pubSetup}
+posters <- c("price_design_2012", "price_effects_2012")
+software <- c("price_tvdiff_2019")
+```
+
+```{r selectPubs}
+bibliography_entries("publications.bib") %>%
+  filter(key %in% c("price_safety-margin-based_2019",
+                    "balesdent_advanced_2016")) %>% 
+  arrange(desc(year), author)
+```
+
+# Software
+
+```{r software}
+bibliography_entries("publications.bib") %>%
+  filter(key %in% software) %>%
+  arrange(desc(year), author)
+```
+
+# Previous Experience
+```{r}
+job.titles %>% 
+  # Jobs that ended more than 5 years ago
+  filter(interval(end, Sys.Date())/years(1) > 5) %>%
+  # Arrange by descending begin date
+  arrange(desc(begin)) %>% 
+  # Format as brief entries
+  brief_entries(
+    what = glue("{position}, {employer}, {city}, {region}, {country}"),
+    when = as.character(
+      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")))
+
+```
