@@ -315,14 +315,14 @@ $endif$
 %      Decrease size of 'where'
 %      Add space before bullets
 %      Remove bullet indent
-\def\detaileditem#1#2#3#4#5{
+\def\detaileditem#1#2#3#4#5#6{
 #2 & \parbox[t]{0.85\textwidth}{%
       \textbf{#1}\hfill{#3}\\
-      \ifx#4\empty\else{\footnotesize #4\par}\fi%
-      \ifx#5\empty\else{%
+      \ifx{#4\land#5}\empty\else{\footnotesize #4 \normalsize \hfill{#5}\par}\fi%
+      \ifx#6\empty\else{%
         \vspace{0.5\parsep}
         \begin{minipage}{0.7\textwidth}%
-        \begin{itemize}[leftmargin=*]#5\end{itemize}%
+        \begin{itemize}[leftmargin=*]#6\end{itemize}%
         \end{minipage}}\fi%
       \vspace{\parsep}}\\}
 \def\detailedsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
