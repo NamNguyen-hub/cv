@@ -1,7 +1,7 @@
-﻿jobId,begin,end,position,employer,department,city,region,country,supervisor
+jobId,begin,end,position,employer,department,city,region,country,supervisor
 7,9/1/16,,Post-doctoral Research Associate,University of Nebraska-Lincoln,,Lincoln,Nebraska,US,Christopher Chizinski
 6,8/16/12,7/31/16,Graduate Research Assistant,University of Florida,Mechanical and Aerospace Engineering,Gainesville,Florida,US,Nam-Ho Kim
-5,10/1/14,3/31/16,Ph.D. Student Researcher,ONERA,,Palaiseau,Île-de-France,France,Mathieu Balesdent
+5,10/1/14,3/31/16,Ph.D. Student Researcher,ONERA – The French Aerospace Lab,,Palaiseau,Île-de-France,France,Mathieu Balesdent
 4,9/16/11,8/2/12,Undergraduate Research Assistant,University of Florida,Mechanical and Aerospace Engineering,Gainesville,Florida,US,Nam-Ho Kim
 3,8/1/10,1/1/11,Launch Engineer Intern,SpaceX,,Cape Canveral,Florida,US,Lorenzo Locante
 2,1/1/05,7/31/10,Engineer Intern,"E&S Consulting, Inc.",,St. Augustine,Florida,US,Edward George
