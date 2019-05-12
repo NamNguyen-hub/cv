@@ -6,7 +6,7 @@ position: "Data Scientist"
 address: "335 S. 46th St. Lincon, NE 68510"
 phone: +1 904 315 2486
 email: "natbprice@gmail.com"
-twitter: DayduhScientist
+twitter: DataSciEng
 github: natbprice
 linkedin: natbprice
 date: "`r format(Sys.time(), '%B %Y')`"
