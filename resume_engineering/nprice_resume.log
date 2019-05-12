@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.30)  7 MAY 2019 19:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.30)  12 MAY 2019 09:21
 entering extended mode
 **./nprice_resume.tex
 (nprice_resume.tex
@@ -1262,20 +1262,14 @@ LaTeX Font Info:    Font shape `TS1/Carlito-TLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 297.
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--297
-\T1/Carlito-TLF/m/n/10 (+20) tem-po-ral, and de-mo-graphic co-vari-ates into an
-al-y-sis of 1.2 mil-lion pur-chase
+[]\T1/Carlito-TLF/m/n/10 (+20) Developed new method to pre-dict cus-tomer re-te
+n-tion and pur-chase prob-a-bil-i-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--297
-[]\T1/Carlito-TLF/m/n/10 (+20) Built ex-ploratory data anal-y-sis web ap-pli-ca
--tion in R for SQL cus-tomer database
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
-\T1/Carlito-TLF/m/n/10 (+20) (4 GB) to pro-vide in-ter-ac-tive vi-su-al-iza-tio
-ns and ex-port data sum-maries and
+[]\T1/Carlito-TLF/m/n/10 (+12) Designed, de-vel-oped, and de-ployed web-based d
+ata anal-y-sis ap-pli-ca-tion in R for
  []
 
 
@@ -1287,19 +1281,13 @@ f sound-ing rocket un-der un-cer-
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--297
 []\T1/Carlito-TLF/m/n/10 (+20) Integrated ma-chine learn-ing (e.g., Gaus-sian p
-ro-cess), op-ti-miza-tion, and un-cer-
+ro-cess) and op-ti-miza-tion to de-sign
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--297
-\T1/Carlito-TLF/m/n/10 (+20) tainty prop-a-ga-tion to de-sign en-gi-neer-ing sy
-s-tems con-sid-er-ing fu-ture de-ci-sion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
-[]\T1/Carlito-TLF/m/n/10 (+20) Collaboratively de-vel-oped optimization-based m
-ethod for The NASA Lan-g-ley
+[]\T1/Carlito-TLF/m/n/10 (+20) Collaboratively de-vel-oped optimization-based s
+o-lu-tion to The NASA Lan-g-ley
  []
 
 LaTeX Font Info:    Font shape `T1/Carlito-TLF/m/it' will be
@@ -1328,7 +1316,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 331.
  ) 
 Here is how much of TeX's memory you used:
  31202 strings out of 492945
- 541306 string characters out of 3127140
+ 541309 string characters out of 3127140
  980985 words of memory out of 3000000
  34777 multiletter control sequences out of 15000+200000
  598470 words of font info for 67 fonts, out of 3000000 for 9000
@@ -1344,7 +1332,7 @@ Nat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/typoland/carlito/Carlito-Ital
 ic.pfb><C:/Users/Nat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/typoland/car
 lito/Carlito.pfb><C:/Users/Nat/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/fontawesome/FontAwesome.pfb>
-Output written on nprice_resume.pdf (1 page, 85377 bytes).
+Output written on nprice_resume.pdf (1 page, 85405 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  17 named destinations out of 1000 (max. 500000)
