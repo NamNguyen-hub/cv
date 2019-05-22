@@ -3,7 +3,7 @@ name: Nathaniel Price
 docname: "Resume"
 fontawesome: yes
 position: "Data Scientist"
-address: "335 S. 46th St. Lincon, NE 68510"
+address: "335 S. 46th St. Lincoln, NE 68510"
 phone: +1 904 315 2486
 email: "natbprice@gmail.com"
 twitter: DataSciEng
