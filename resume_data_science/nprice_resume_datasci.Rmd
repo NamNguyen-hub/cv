@@ -124,11 +124,11 @@ education2 <- education %>%
   group_by(degree) %>%
   mutate(where = if_else(
   n() > 1,
-  glue(
+  as.character(glue(
   "{nth(city, 1)}, {nth(region, 1)}, {nth(country,1)} and
   {nth(city, 2)}, {nth(region, 2)}, {nth(country,2)}"
-  ),
-  glue("{nth(city, 1)}, {nth(region, 1)}, {nth(country,1)}")
+  )),
+  as.character(glue("{nth(city, 1)}, {nth(region, 1)}, {nth(country,1)}"))
   )) %>% 
   ungroup()
 
