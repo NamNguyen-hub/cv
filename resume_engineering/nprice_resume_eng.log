@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  23 MAY 2019 10:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  24 JUN 2019 15:57
 entering extended mode
 **./nprice_resume_eng.tex
 (nprice_resume_eng.tex
@@ -1227,7 +1227,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
 Here is how much of TeX's memory you used:
  31210 strings out of 492945
  539268 string characters out of 3135508
- 981011 words of memory out of 3000000
+ 981012 words of memory out of 3000000
  34781 multiletter control sequences out of 15000+200000
  598914 words of font info for 69 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1242,7 +1242,7 @@ TeX/2.9/fonts/type1/typoland/carlito/Carlito-Bold.pfb><C:/Users/nprice3/AppData
 price3/AppData/Roaming/MiKTeX/2.9/fonts/type1/typoland/carlito/Carlito.pfb><C:/
 Users/nprice3/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fontawesome/FontAwe
 some.pfb>
-Output written on nprice_resume_eng.pdf (1 page, 86955 bytes).
+Output written on nprice_resume_eng.pdf (1 page, 86798 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)

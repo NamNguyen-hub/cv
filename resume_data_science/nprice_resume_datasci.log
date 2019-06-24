@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  23 MAY 2019 10:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  24 JUN 2019 15:58
 entering extended mode
 **./nprice_resume_datasci.tex
 (nprice_resume_datasci.tex
@@ -1226,12 +1226,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
  ) 
 Here is how much of TeX's memory you used:
  31206 strings out of 492945
- 539209 string characters out of 3135508
- 982035 words of memory out of 3000000
+ 539203 string characters out of 3135508
+ 982034 words of memory out of 3000000
  34780 multiletter control sequences out of 15000+200000
  598470 words of font info for 67 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,11n,69p,1265b,1212s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,11n,69p,1251b,1212s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/nprice3/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/carlito/crlt_z7v
 ml3.enc}{C:/Users/nprice3/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/carlito/cr
 lt_ntvnfo.enc}{C:/Users/nprice3/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/font
@@ -1242,7 +1242,7 @@ TeX/2.9/fonts/type1/typoland/carlito/Carlito-Bold.pfb><C:/Users/nprice3/AppData
 price3/AppData/Roaming/MiKTeX/2.9/fonts/type1/typoland/carlito/Carlito.pfb><C:/
 Users/nprice3/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fontawesome/FontAwe
 some.pfb>
-Output written on nprice_resume_datasci.pdf (1 page, 83966 bytes).
+Output written on nprice_resume_datasci.pdf (1 page, 83811 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
