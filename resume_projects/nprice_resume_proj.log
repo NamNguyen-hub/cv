@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 JUN 2019 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 JUN 2019 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -807,13 +807,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 271.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 271.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 271.
 Package rerunfilecheck Info: File `nprice_resume_proj.out' has not changed.
-(rerunfilecheck)             Checksum: 329AC129A07D8EBE005564891B99B0F6;297.
+(rerunfilecheck)             Checksum: E4A8B24EE56BA906C8CCB405129C688D;345.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 271.
  ) 
 Here is how much of TeX's memory you used:
  15838 strings out of 492616
- 235162 string characters out of 6129482
- 383577 words of memory out of 5000000
+ 235180 string characters out of 6129482
+ 383586 words of memory out of 5000000
  19510 multiletter control sequences out of 15000+600000
  76739 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -826,7 +826,7 @@ fb></usr/local/texlive/2019/texmf-dist/fonts/type1/typoland/carlito/Carlito-Ita
 lic.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/typoland/carlito/Carlit
 o.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAw
 esome.pfb>
-Output written on nprice_resume_proj.pdf (1 page, 67037 bytes).
+Output written on nprice_resume_proj.pdf (1 page, 67145 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream

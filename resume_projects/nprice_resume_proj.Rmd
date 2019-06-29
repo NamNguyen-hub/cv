@@ -224,7 +224,7 @@ project.titles %>%
 ```
 
 
-# Employers
+# Employment History
 ```{r}
 job.titles %>% 
   # Arrange by descending begin date
