@@ -189,7 +189,8 @@ education2 <- education %>%
 
 
 education2 %>%
-  filter(country != "France") %>% 
+  filter(country != "France",
+         !grepl("M.S.", degree)) %>% 
   my_detailed_entries(
     what = degree,
     when = year(end),
