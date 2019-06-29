@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 JUN 2019 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 JUN 2019 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,7 +817,7 @@ Here is how much of TeX's memory you used:
  19510 multiletter control sequences out of 15000+600000
  76739 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,69p,1934b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,69p,1956b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/carlito/crlt_ntvnfo.enc}{
 /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/carlito/crlt_z7vml3.enc}{/us
 r/local/texlive/2019/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}
@@ -826,7 +826,7 @@ fb></usr/local/texlive/2019/texmf-dist/fonts/type1/typoland/carlito/Carlito-Ita
 lic.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/typoland/carlito/Carlit
 o.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fontawesome/FontAw
 esome.pfb>
-Output written on nprice_resume_proj.pdf (1 page, 67145 bytes).
+Output written on nprice_resume_proj.pdf (1 page, 67157 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream

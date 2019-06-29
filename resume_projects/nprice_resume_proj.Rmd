@@ -236,3 +236,4 @@ job.titles %>%
       glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")))
 
 ```
+
