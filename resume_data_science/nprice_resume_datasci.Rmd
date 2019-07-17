@@ -2,13 +2,10 @@
 name: Nathaniel Price
 docname: "Resume"
 fontawesome: yes
-position: "Data Scientist"
 address: "335 S. 46th St. Lincoln, NE 68510"
-phone: +1 904 315 2486
+phone: "+1 904 315 2486"
 email: "natbprice@gmail.com"
-twitter: DataSciEng
-github: natbprice
-linkedin: natbprice
+www: "natbprice.github.io"
 date: "`r format(Sys.time(), '%B %Y')`"
 output: function(...) vitae::cv_document(..., template = "pricetemplate.tex", citation_package = "biblatex")
 ---
@@ -149,8 +146,9 @@ education2 %>%
 
 ```{r experience}
 job.titles %>% 
-  # Only jobs that ended less than 5 years ago
-  filter(is.na(end) | interval(end, Sys.Date())/years(1) <= 5) %>%
+  # Only 5 most recent jobs
+  arrange(desc(begin)) %>% 
+  filter(row_number() <= 5) %>% 
   # Join job descriptions
   left_join(job.descriptions) %>% 
   # Arrange by descending begin date
@@ -159,7 +157,9 @@ job.titles %>%
   my_detailed_entries(
     what = position,
     when = as.character(
-      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")),
+      glue("{month(begin, label = TRUE, abbr = TRUE)} {year(begin)} - 
+           {if_else(!is.na(end), 
+           paste(month(end, label = TRUE, abbr = TRUE), year(end)), 'present')}")),
     with = employer,
     where = glue("{city}, {region}, {country}"),
     why = accomplishments)
@@ -167,29 +167,10 @@ job.titles %>%
 ```
 
 
-# Awards
-```{r awards}
-
-awards %>% 
-  # filter(grepl("BMES|Knox", title)) %>% 
-  brief_entries(
-    what = title,
-    when = year)
-```
-
-
-# Select Publications
 
 ```{r pubSetup}
 posters <- c("price_design_2012", "price_effects_2012")
 software <- c("price_radsets_2019", "price_tvdiff_2019")
-```
-
-```{r selectPubs}
-bibliography_entries("publications.bib") %>%
-  filter(key %in% c("price_application_2019",
-                    "balesdent_advanced_2016")) %>% 
-  arrange(desc(year), author)
 ```
 
 # Software
@@ -200,17 +181,14 @@ bibliography_entries("publications.bib") %>%
   arrange(desc(year), author)
 ```
 
-# Previous Experience
-```{r}
-job.titles %>% 
-  # Jobs that ended more than 5 years ago
-  filter(interval(end, Sys.Date())/years(1) > 5) %>%
-  # Arrange by descending begin date
-  arrange(desc(begin)) %>% 
-  # Format as brief entries
-  brief_entries(
-    what = glue("{position}, {employer}, {city}, {region}, {country}"),
-    when = as.character(
-      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")))
 
-```
+# Data Science Skills
+**Communication:** presentations, dashboard design, data analysis reports, scientific publications, data visualization
+
+**Programming Languages:** R, Python, SQL, Matlab, C++
+
+**Software Development:** version control, automated testing, continuous integration
+
+**Numerical Methods:** optimization, solving differential equations
+
+**Statistics:** machine learning, data analysis, generalized linear regression, cluster analysis, factor analysis, principal components analysis, cross validation, model selection, generalized additive models

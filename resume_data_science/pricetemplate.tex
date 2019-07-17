@@ -191,25 +191,27 @@ $if(fontawesome)$\usepackage{fontawesome}$endif$
 
 %job title
 $if(jobtitle)$\moveleft.5\hoffset\centerline{$jobtitle$}$endif$
+\vspace{1 mm}
+\centerline{
 %address
-$if(address)$\moveleft.5\hoffset\centerline{$address$}$endif$
-\moveleft.5\hoffset\centerline{ 
+$if(address)$\faicon{map-marker} $address$ \hspace{1 mm} $endif$%
 %github
-$if(github)$$if(fontawesome)$\faGithub \hspace{1 mm}$else$\emph{Github:}$endif$ \href{http://github.com/$github$}{\color{black} $github$} \hspace{1 mm} $endif$  
-%github
-$if(twitter)$$if(fontawesome)$\faTwitter \hspace{1 mm}$else$\emph{Twitter:}$endif$ \href{http://twitter.com/$twitter$}{\color{black} $twitter$} \hspace{1 mm} $endif$  
+$if(github)$\faicon{github} \href{http://github.com/$github$}{\color{black} $github$} \hspace{1 mm} $endif$%
+%twitter
+$if(twitter)$\faicon{twitter} \href{http://twitter.com/$twitter$}{\color{black} $twitter$} \hspace{1 mm} $endif$%
 %phone
-$if(phone)$$if(fontawesome)$ \faMobile \hspace{1 mm}$else$\emph{Phone:}$endif$  $phone$  \hspace{1 mm} $endif$ 
+$if(phone)$\faicon{phone} $phone$ \hspace{1 mm} $endif$%
 %email
-$if(email)$$if(fontawesome)$\faEnvelopeO \hspace{1 mm}$else$\emph{E-mail:}$endif$ \href{mailto:}{\color{black} $email$} \hspace{1 mm}$endif$ 
+$if(email)$\faicon{envelope} \href{mailto:}{\color{black} $email$} \hspace{1 mm} $endif$%
 %linkedin
-$if(linkedin)$\faicon{linkedin} \hspace{1 mm} \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}$endif$
+$if(linkedin)$\faicon{linkedin} \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$} \hspace{1 mm} $endif$%
 %scholar
-$if(scholar)$\faicon{google} \hspace{1 mm} \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}$endif$%
+$if(scholar)$\faicon{google} \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$} \hspace{1 mm} $endif$%
 %orcid
-$if(orcid)$\faicon{openid} \hspace{1 mm} \href{https://orcid.org/$orcid$}{$orcid$}$endif$%
+$if(orcid)$\faicon{openid} \href{https://orcid.org/$orcid$}{$orcid$} \hspace{1 mm} $endif$%
 %website
-$if(web)$$if(fontawesome)$\faGlobe \hspace{1 mm}$else$\emph{Web:}$endif$ \href{http://$web$}{\tt $web$}  $endif$ $if(updated)$ | \emph{Updated:} \today$endif$}
+$if(www)$\faicon{home} \href{http://$www$}{$www$}\hspace{1 mm} $endif$%
+}
 
 \vspace{2 mm}
 \hrule
@@ -316,15 +318,15 @@ $endif$
 %      Add space before bullets
 %      Remove bullet indent
 \def\detaileditem#1#2#3#4#5#6{
-#2 & \parbox[t]{0.85\textwidth}{%
+#2 & \parbox[t]{0.775\textwidth}{%
       \textbf{#1}\hfill{#3}\\
       \ifx{#4\land#5}\empty\else{\footnotesize #4 \normalsize \hfill{#5}\par}\fi%
       \ifx#6\empty\else{%
-        \vspace{0.5\parsep}
+        \vspace{\parsep}
         \begin{minipage}{0.7\textwidth}%
         \begin{itemize}[leftmargin=*]#6\end{itemize}%
         \end{minipage}}\fi%
-      \vspace{\parsep}}\\}
+      \vspace{2\parsep}}\\}
 \def\detailedsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
 
 % Templates for brief entries
