@@ -191,4 +191,4 @@ bibliography_entries("publications.bib") %>%
 
 **Numerical Methods:** optimization (stochastic, genetic, multi-start),  numerical solution of differential equations
 
-**Statistics:** machine learning, data analysis, generalized linear regression, cluster analysis, factor analysis, principal components analysis, cross validation, model selection, generalized additive models, data analytics, Monte Carlo simulation
+**Statistics:** machine learning, data analysis, generalized linear regression, cluster analysis, factor analysis, principal components analysis (PCA), cross validation, generalized additive models, data analytics, Monte Carlo simulation
