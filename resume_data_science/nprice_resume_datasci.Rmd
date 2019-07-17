@@ -191,4 +191,4 @@ bibliography_entries("publications.bib") %>%
 
 **Numerical Methods:** optimization, solving differential equations
 
-**Statistics:** machine learning, data analysis, generalized linear regression, cluster analysis, factor analysis, principal components analysis, cross validation, model selection, generalized additive models
+**Statistics:** machine learning, data analysis, generalized linear regression, cluster analysis, factor analysis, principal components analysis, cross validation, model selection, generalized additive models, data analytics, Monte Carlo simulation
