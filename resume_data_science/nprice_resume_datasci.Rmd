@@ -183,12 +183,12 @@ bibliography_entries("publications.bib") %>%
 
 
 # Data Science Skills
-**Communication:** presentations, dashboard design, data analysis reports, scientific publications, data visualization
+**Communication:** presentations (technical and non-technical), dashboard design, data analysis reports, scientific publications, data visualization
 
 **Programming Languages:** R, Python, SQL, Matlab, C++
 
 **Software Development:** version control, automated testing, continuous integration
 
-**Numerical Methods:** optimization, solving differential equations
+**Numerical Methods:** optimization (stochastic, genetic, multi-start),  numerical solution of differential equations
 
 **Statistics:** machine learning, data analysis, generalized linear regression, cluster analysis, factor analysis, principal components analysis, cross validation, model selection, generalized additive models, data analytics, Monte Carlo simulation
