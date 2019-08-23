@@ -2,7 +2,7 @@
 name: Nathaniel Price
 docname: "Resume"
 fontawesome: yes
-address: "335 S. 46th St. Lincoln, NE 68510"
+address: "85 S Union Blvd Apt 563, Lakewood, CO 80228"
 phone: "+1 904 315 2486"
 email: "natbprice@gmail.com"
 www: "natbprice.github.io"

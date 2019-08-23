@@ -3,12 +3,10 @@ name: Nathaniel Price
 docname: "Resume"
 fontawesome: yes
 position: "Data Scientist"
-address: "335 S. 46th St. Lincoln, NE 68510"
-phone: +1 904 315 2486
+address: "85 S Union Blvd Apt 563, Lakewood, CO 80228"
+phone: "+1 904 315 2486"
 email: "natbprice@gmail.com"
-twitter: DataSciEng
-github: natbprice
-linkedin: natbprice
+www: "natbprice.github.io"
 date: "`r format(Sys.time(), '%B %Y')`"
 output: function(...) vitae::cv_document(..., template = "pricetemplate.tex", citation_package = "biblatex")
 ---
@@ -159,7 +157,9 @@ job.titles %>%
   my_detailed_entries(
     what = position,
     when = as.character(
-      glue("{year(begin)} - {if_else(!is.na(end), as.character(year(end)), 'present')}")),
+      glue("{month(begin, label = TRUE, abbr = TRUE)} {year(begin)} - 
+           {if_else(!is.na(end), 
+           paste(month(end, label = TRUE, abbr = TRUE), year(end)), 'present')}")),
     with = employer,
     where = glue("{city}, {region}, {country}"),
     why = accomplishments)
