@@ -2,7 +2,7 @@
 name: Nathaniel Price
 docname: "Resume"
 fontawesome: yes
-address: "85 S Union Blvd Apt 563, Lakewood, CO 80228"
+address: "Lakewood, Colorado"
 phone: "+1 904 315 2486"
 email: "natbprice@gmail.com"
 www: "natbprice.github.io"
