@@ -148,11 +148,11 @@ education2 %>%
 job.titles %>% 
   # Only 5 most recent jobs
   arrange(desc(begin)) %>% 
-  filter(row_number() <= 5) %>% 
+  filter(row_number() <= 5) %>%
   # Join job descriptions
   left_join(job.descriptions) %>% 
   # Arrange by descending begin date
-  arrange(desc(begin)) %>% 
+  arrange(desc(begin), descId) %>% 
   # Format as detailed entries
   my_detailed_entries(
     what = position,

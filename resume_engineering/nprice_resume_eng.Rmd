@@ -3,7 +3,7 @@ name: Nathaniel Price
 docname: "Resume"
 fontawesome: yes
 position: "Data Scientist"
-address: "Lakewood, COolorado"
+address: "Lakewood, Colorado"
 phone: "+1 904 315 2486"
 email: "natbprice@gmail.com"
 www: "natbprice.github.io"
@@ -152,7 +152,7 @@ job.titles %>%
   # Join job descriptions
   left_join(job.descriptions) %>% 
   # Arrange by descending begin date
-  arrange(desc(begin)) %>% 
+  arrange(desc(begin), descId) %>% 
   # Format as detailed entries
   my_detailed_entries(
     what = position,
@@ -167,8 +167,7 @@ job.titles %>%
 ```
 
 
-# Awards
-```{r awards}
+```{r awards, eval = FALSE}
 
 awards %>% 
   filter(grepl("BMES|Knox|AIAA", title)) %>%
@@ -189,7 +188,8 @@ software <- c("price_tvdiff_2019")
 bibliography_entries("publications.bib") %>%
   filter(key %in% c("price_safety-margin-based_2019",
                     "balesdent_advanced_2016",
-                    "price_deciding_2016")) %>% 
+                    "price_deciding_2016",
+                    "chaudhuri_nasa_2015")) %>% 
   arrange(desc(year), author)
 ```
 
@@ -201,8 +201,7 @@ bibliography_entries("publications.bib") %>%
   arrange(desc(year), author)
 ```
 
-# Previous Experience
-```{r}
+```{r, eval = FALSE}
 job.titles %>% 
   # Jobs that ended more than 5 years ago
   filter(interval(end, Sys.Date())/years(1) > 5) %>%
