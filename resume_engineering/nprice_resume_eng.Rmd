@@ -148,7 +148,7 @@ education2 %>%
 ```{r experience}
 job.titles %>% 
   # Only jobs that ended less than 5 years ago
-  filter(is.na(end) | interval(end, Sys.Date())/years(1) <= 5) %>%
+  filter(is.na(end) | interval(end, Sys.Date())/years(1) <= 10) %>%
   # Join job descriptions
   left_join(job.descriptions) %>% 
   # Arrange by descending begin date
@@ -186,16 +186,12 @@ software <- c("price_tvdiff_2019")
 
 ```{r selectPubs}
 bibliography_entries("publications.bib") %>%
-  filter(key %in% c("price_safety-margin-based_2019",
-                    "balesdent_advanced_2016",
-                    "price_deciding_2016",
+  filter(key %in% c("balesdent_advanced_2016",
                     "chaudhuri_nasa_2015")) %>% 
   arrange(desc(year), author)
 ```
 
-# Software
-
-```{r software}
+```{r software, eval = FALSE}
 bibliography_entries("publications.bib") %>%
   filter(key %in% software) %>%
   arrange(desc(year), author)
