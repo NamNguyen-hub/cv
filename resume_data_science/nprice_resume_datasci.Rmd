@@ -104,7 +104,9 @@ job.titles %>%
     where = glue("{city}, {region}, {country}"),
     why = accomplishments)
 ```
+
 # Data Science Skills
+
 ```{r}
 skills_formatted <- skills %>% 
   mutate(skill = if_else(is.na(details), glue("{skill}"), glue("{skill} ({details})"))) %>% 
@@ -123,6 +125,7 @@ for (group in skills_formatted$group) {
 ```
 
 # Publications
+
 \faicon{book} `r bibliography_entries("publications.bib") %>% filter(type == "chapter") %>% summarize(N = n()) %>% pull(N)` book chapters
 
 \faicon{file-text} `r bibliography_entries("publications.bib") %>% filter(type == "article-journal") %>% summarize(N = n()) %>% pull(N)` peer-reviewed journal publications
@@ -154,3 +157,5 @@ bibliography_entries("publications.bib") %>%
   ) %>%
   arrange(desc(issued))
 ```
+
+\fancyfoot[LO,LE]{\footnotesize This resume was generated on `r Sys.time()` using vitae R package and custom LaTeX template (\href{https://github.com/natbprice/cv}{github.com/natbprice/cv})}
