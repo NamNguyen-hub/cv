@@ -123,13 +123,15 @@ for (group in skills_formatted$group) {
 ```
 
 # Publications
-Full List Available on Google Scholar: https://scholar.google.com/citations?hl=en&user=rXaKU0EAAAAJ
-
 \faicon{book} `r bibliography_entries("publications.bib") %>% filter(type == "chapter") %>% summarize(N = n()) %>% pull(N)` book chapters
 
 \faicon{file-text} `r bibliography_entries("publications.bib") %>% filter(type == "article-journal") %>% summarize(N = n()) %>% pull(N)` peer-reviewed journal publications
 
 \faicon{pencil} `r bibliography_entries("publications.bib") %>% filter(type == "paper-conference") %>% summarize(N = n()) %>% pull(N)` conference papers
+
+\faicon{floppy-o} `r bibliography_entries("publications.bib") %>% filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) %>% summarize(N = n()) %>% pull(N)` open-source software packages
+
+Full List Available on Google Scholar: https://scholar.google.com/citations?hl=en&user=rXaKU0EAAAAJ
 
 ## Open Source Software
 
