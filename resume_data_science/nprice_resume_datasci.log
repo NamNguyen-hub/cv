@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.27)  28 MAR 2021 14:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.27)  30 MAR 2021 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,7 +798,7 @@ ve/texmf-dist/fonts/type1/typoland/carlito/Carlito-Italic.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/typoland/carlito/Carlito.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on nprice_resume_datasci.pdf (2 pages, 106907 bytes).
+Output written on nprice_resume_datasci.pdf (2 pages, 106908 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream
