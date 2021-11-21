@@ -28,29 +28,38 @@ library(rlang)
 ```{r loadData}
 
 # Education
-education <- read_csv("../data/education.csv",
-                      col_types = cols(
-                        begin = col_date("%m/%d/%y"),
-                        end = col_date("%m/%d/%y")
-                        )
-                      )
+education <- data.table::fread("../data/education.csv",
+                               encoding = "UTF-8") %>%
+  as_tibble() %>%
+  mutate(
+    begin = as.Date(begin, format = "%m/%d/%y"),
+    end = as.Date(end, format = "%m/%d/%y")
+  )
 
 # Job titles
-job.titles <- read_csv("../data/job-titles.csv",
-                      col_types = cols(
-                        begin = col_date("%m/%d/%y"),
-                        end = col_date("%m/%d/%y")
-                        )
-)
+job.titles <- data.table::fread("../data/job-titles.csv",
+                                encoding = "UTF-8") %>%
+  as_tibble() %>%
+  mutate(
+    begin = as.Date(begin, format = "%m/%d/%y"),
+    end = as.Date(end, format = "%m/%d/%y")
+  )
 
 # Skills
-skills <- read_csv("../data/skills.csv")
+skills <- data.table::fread("../data/skills.csv",
+                            encoding = "UTF-8") %>%
+  as_tibble()
 
 # Job descriptions
-job.descriptions <- read_csv("../data/job-descriptions.csv")
+job.descriptions <-
+  data.table::fread("../data/job-descriptions.csv",
+                    encoding = "UTF-8") %>%
+  as_tibble()
 
 # Awards
-awards <- read_csv("../data/awards.csv")
+awards <- data.table::fread("../data/awards.csv",
+                            encoding = "UTF-8") %>%
+  as_tibble()
 
 ```
 
@@ -109,7 +118,7 @@ job.titles %>%
 
 ```{r}
 skills_formatted <- skills %>% 
-  mutate(skill = if_else(is.na(details), glue("{skill}"), glue("{skill} ({details})"))) %>% 
+  mutate(skill = if_else(is.na(details)|details=="", glue("{skill}"), glue("{skill} ({details})"))) %>% 
   group_by(group) %>% 
   summarize(skills = glue_collapse(skill, sep = " $\\bullet$ "))
 ```

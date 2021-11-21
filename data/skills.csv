@@ -16,16 +16,15 @@ software development,automated testing,
 cloud computing,Azure,
 cloud computing,AWS,
 cloud computing,high-performance computing,Azure Batch
-cloud computing,NoSQL,Azure Table/Blob
+cloud computing,NoSQL,"Azure Table/Blob, AWS S3"
+cloud computing,containers,"Docker, Azure ACI, Azure ACR"
 numerical methods,optimization,"stochastic, genetic, multi-start"
-numerical methods,methods for differential equations,
+numerical methods,differential equations,
 statistics,machine learning,
 statistics,data analysis,
-statistics,cluster analysis,
-statistics,factor analysis,
-statistics,principal components analysis,
+statistics,surrogate models,
 statistics,cross-validation,
+statistics,uncertainty quantification,
 statistics,Monte Carlo simulation,
-statistics,generalized linear regression,
 statistics,experimental design,
 statistics,survey methodology,

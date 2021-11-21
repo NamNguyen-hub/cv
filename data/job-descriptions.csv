@@ -1,7 +1,8 @@
 jobId,position.desc,employer.desc,category,descId,accomplishments
-9,Senior Data Scientist,ICF,data science,b,"Rapidly researched, prototyped, and deployed machine learning algorithms for energy disaggregation and electric vehicle charging detection"
-9,Senior Data Scientist,ICF,data science,a,"As part of 2 person team, built cloud computing/machine learning infrastructure (NoSQL, Azure DevOps pipelines, batch computing, etc.) from the ground up for low-cost, scalable analysis of billions of records of utility smart meter data"
-9,Senior Data Scientist,ICF,data science,c,"Established monthly, cross-team Data Science Knowledge Share meetings to promote collaboration and discuss topics such as scaling knowledge, Azure DevOps, and coding best practices"
+9,Senior Data Scientist,ICF,data science,b,"Researched, prototyped, and deployed machine learning models related to utility analytics (e.g., energy disaggregation, energy savings, EV detection)"
+9,Senior Data Scientist,ICF,data science,a,"Built Azure cloud computing/machine learning infrastructure from the ground up for low-cost, scalable analysis of billions of records of utility smart meter data"
+9,Senior Data Scientist,ICF,data science,c,Established cross-team Data Science Knowledge Share meetings to promote collaboration and information sharing
+9,Senior Data Scientist,ICF,data science,d,Assisted other teams in scaling data science processes by advising on best practices and providing technical assistance
 7,Data Scientist Post-Doc,University of Nebraska-Lincoln,"data science, marketing",b,"Designed, developed, and deployed open-source, web-based, data analysis application (SQL, R, Shiny) for analyzing repeat-purchase behavior (recruitment, retention, churn, reactivation) of Nebraska sportspersons"
 7,Data Scientist Post-Doc,University of Nebraska-Lincoln,"data science, marketing",c,"Mentored graduate students and facilitated data science research resulting in multiple journal publications, international conference presentations, and a book chapter"
 6,Graduate Research Assistant,University of Florida,"data science, engineering",a,"Integrated machine learning (e.g., Gaussian process) and optimization to design engineering systems considering uncertainty in future decision making process"
