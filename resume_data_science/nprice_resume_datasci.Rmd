@@ -1,11 +1,11 @@
 ---
-name: Nathaniel Price
+name: Nam Nguyen
 docname: "Resume"
 fontawesome: yes
-address: "Denver, Colorado"
-phone: "+1 904 315 2486"
-email: "natbprice@gmail.com"
-www: "natbprice.github.io"
+address: "Milwaukee, Wisconsin"
+phone: "+1 414 207 7507"
+email: "nam.nguyen.thn@gmail.com"
+# www: "namnguyen.github.io"
 date: "`r format(Sys.time(), '%B %Y')`"
 output: function(...) {source('price_entries.R');vitae:::set_entry_formats(price_entries);vitae::cv_document(..., template = "pricetemplate.tex", citation_package = "biblatex")}
 ---
@@ -133,27 +133,27 @@ for (group in skills_formatted$group) {
 }
 ```
 
-# Publications
+# Researchs
 
-\faicon{book} `r bibliography_entries("publications.bib") %>% filter(type == "chapter") %>% summarize(N = n()) %>% pull(N)` book chapters
+<!-- \faicon{book} `r bibliography_entries("publications.bib") %>% filter(type == "chapter") %>% summarize(N = n()) %>% pull(N)` book chapters -->
 
-\faicon{file-text} `r bibliography_entries("publications.bib") %>% filter(type == "article-journal") %>% summarize(N = n()) %>% pull(N)` peer-reviewed journal publications
+<!-- \faicon{file-text} `r bibliography_entries("publications.bib") %>% filter(type == "article-journal") %>% summarize(N = n()) %>% pull(N)` peer-reviewed journal publications -->
 
-\faicon{pencil} `r bibliography_entries("publications.bib") %>% filter(type == "paper-conference") %>% summarize(N = n()) %>% pull(N)` conference papers
+\faicon{pencil} `r bibliography_entries("publications.bib") %>% filter(type == "paper-conference") %>% summarize(N = n()) %>% pull(N)` thesis papers
 
-\faicon{floppy-o} `r bibliography_entries("publications.bib") %>% filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) %>% summarize(N = n()) %>% pull(N)` open-source software packages
+<!-- \faicon{floppy-o} `r bibliography_entries("publications.bib") %>% filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) %>% summarize(N = n()) %>% pull(N)` open-source software packages -->
 
-Full List Available on Google Scholar: https://scholar.google.com/citations?hl=en&user=rXaKU0EAAAAJ
+<!-- Full List Available on Google Scholar: https://scholar.google.com/citations?hl=en&user=rXaKU0EAAAAJ -->
 
-## Open Source Software
+<!-- ## Open Source Software -->
 
-```{r}
-bibliography_entries("publications.bib") %>%
-  filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019"))
-```
+<!-- ```{r} -->
+<!-- bibliography_entries("publications.bib") %>% -->
+<!--   filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) -->
+<!-- ``` -->
 
 
-## Select Publications
+## Papers
 ```{r}
 bibliography_entries("publications.bib") %>%
   filter(
@@ -167,4 +167,4 @@ bibliography_entries("publications.bib") %>%
   arrange(desc(issued))
 ```
 
-\fancyfoot[LO,LE]{\footnotesize This resume was generated on `r Sys.time()` using vitae R package and custom LaTeX template (\href{https://github.com/natbprice/cv}{github.com/natbprice/cv})}
+<!-- \fancyfoot[LO,LE]{\footnotesize This resume was generated on `r Sys.time()` using vitae R package and custom LaTeX template (\href{https://github.com/natbprice/cv}{github.com/natbprice/cv})} -->
