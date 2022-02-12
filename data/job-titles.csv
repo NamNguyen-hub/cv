@@ -1,7 +1,7 @@
 jobId,begin,end,position,employer,department,city,region,country,supervisor
 6,9/1/17,5/20/22,Graduate Teaching Assistant,University of Wisconsin - Milwaukee,Economics,Milwaukee,Wisconsin,US,Kundan Kishor
 4,9/1/14,5/1/16,Graduate Teaching Assistant,University of Illinois at Chicago,Economics,Chicago,Illinois,US,William Frank Rauscher
-5,1/1/17,8/1/17,Research Assistant,America Institutes for Research,Quality Control,Washington D.C.,,US,Melissa Pechulis
+5,1/1/17,8/1/17,Research Assistant,America Institutes for Research,Quality Control,Washington ,D.C,US,Melissa Pechulis
 3,12/1/13,6/1/14,Life Insurance Underwriting Assistant,Transamerica,Quality Control,Cedar Rapids,Iowa,US,Crystal Reynolds
-2,9/1/11,12/15/11,International Trade Analyst - Intern,SBCD Illinois International Trade Center,Small Bussiness Export,Chicago,Illinois,US,Steve DeBretto
+2,9/1/11,12/15/11,International Trade Analyst - Intern,SBDC Illinois International Trade Center,Small Bussiness Export,Chicago,Illinois,US,Steve DeBretto
 1,5/15/11,9/1/11,Undergraduate Research Assistant,Coe College,Economics,Cedar Rapids,Iowa,US,Mickey Tai Wu

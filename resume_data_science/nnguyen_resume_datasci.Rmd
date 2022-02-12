@@ -1,6 +1,6 @@
 ---
 name: Nam Nguyen
-docname: "Resume"
+docname: "Updated: Feb 2022 - Resume"
 fontawesome: yes
 address: "Milwaukee, Wisconsin"
 phone: "+1 414 207 7507"
@@ -61,12 +61,16 @@ awards <- data.table::fread("../data/awards.csv",
                             encoding = "UTF-8") %>%
   as_tibble()
 
+# Teaching
+teaching <- data.table::fread("../data/teaching.csv",
+                            encoding = "UTF-8") %>%
+  as_tibble()
+
 ```
 
 # Education
 ```{r education, results = "asis"}
 
-# Merge joint PhD entries
 education %>%
   arrange(desc(end), begin) %>%
   mutate(what = degree,
@@ -74,12 +78,6 @@ education %>%
          with = university,
          where = glue("{city}, {region}, {country}")) %>% 
   select(what, when, with, where) %>% 
-  group_by(what, when) %>% 
-  summarize(what = nth(what, 1),
-            when = nth(when, 1),
-            with = if_else(n() > 1, glue("{nth(with, 1)} and {nth(with, 2)}"), nth(with, 1)),
-            where = if_else(n() > 1, glue("{nth(where, 1)} and {nth(where, 2)}"), nth(with, 1)),
-            .groups = "drop") %>% 
   arrange(desc(when)) %>% 
   detailed_entries(
     what,
@@ -90,6 +88,44 @@ education %>%
   )
 
 ```
+
+# Research Interests
+**Primary:**   Applied Macroeconomics $\bullet$ Housing and Financial Markets $\bullet$ Forecasting
+
+**Secondary:** Bayesian Econometrics $\bullet$ Unobserved Component models $\bullet$ Optimization
+
+&nbsp;
+
+# Data Science Skills
+
+**Statistics:** machine learning $\bullet$ neural network $\bullet$ Bayesian inference $\bullet$ quantitative methods $\bullet$ panel data analysis $\bullet$ time series models $\bullet$ cross-validation $\bullet$ uncertainty quantification
+
+**Programming Languages:** R $\bullet$ Python $\bullet$ SQL $\bullet$ Matlab $\bullet$ C++ $\bullet$ Stata $\bullet$ SAS
+
+**Software Development:** source control (Git)
+
+**Numerical Methods:** optimization (stochastic, multi-start) $\bullet$ differential equations
+
+**Communication:** presentations $\bullet$ data analysis reports (Rmarkdown, Jupyter) $\bullet$ data visualization (ggplot2)
+
+<!-- ```{r} -->
+<!-- skills_formatted <- skills %>% -->
+<!--   mutate(skill = if_else(is.na(details)|details=="", glue("{skill}"), glue("{skill} ({details})"))) %>% -->
+<!--   group_by(group) %>% -->
+<!--   summarize(skills = glue_collapse(skill, sep = " $\\bullet$ ")) -->
+<!-- ``` -->
+
+<!-- ```{r, results='asis', width = 40000} -->
+<!-- for (group in skills_formatted$group) { -->
+<!--   cat( -->
+<!--     glue("\\textbf{<<tools::toTitleCase(group)>>}:", .open = "<<", .close = ">>"), -->
+<!--     filter(skills_formatted, group == !!group)$skills, -->
+<!--     "\n\n\n" -->
+<!--   ) -->
+<!-- } -->
+<!-- ``` -->
+
+&nbsp;
 
 # Experience
 
@@ -114,33 +150,16 @@ job.titles %>%
     why = accomplishments)
 ```
 
-# Data Science Skills
 
-```{r}
-skills_formatted <- skills %>% 
-  mutate(skill = if_else(is.na(details)|details=="", glue("{skill}"), glue("{skill} ({details})"))) %>% 
-  group_by(group) %>% 
-  summarize(skills = glue_collapse(skill, sep = " $\\bullet$ "))
-```
-
-```{r, results='asis', width = 40000}
-for (group in skills_formatted$group) {
-  cat(
-    glue("\\textbf{<<tools::toTitleCase(group)>>}:", .open = "<<", .close = ">>"),
-    filter(skills_formatted, group == !!group)$skills,
-    "\n\n\n"
-  )
-}
-```
-
-# Researchs
+# Research
 
 <!-- \faicon{book} `r bibliography_entries("publications.bib") %>% filter(type == "chapter") %>% summarize(N = n()) %>% pull(N)` book chapters -->
 
 <!-- \faicon{file-text} `r bibliography_entries("publications.bib") %>% filter(type == "article-journal") %>% summarize(N = n()) %>% pull(N)` peer-reviewed journal publications -->
 
-\faicon{pencil} `r bibliography_entries("publications.bib") %>% filter(type == "paper-conference") %>% summarize(N = n()) %>% pull(N)` thesis papers
+<!-- \faicon{pencil} `r bibliography_entries("publications.bib") %>% filter(type == "paper-conference") %>% summarize(N = n()) %>% pull(N)` thesis papers -->
 
+<!-- \faicon{pencil} `r bibliography_entries("publications.bib") %>% summarize(N = n()) %>% pull(N)` thesis papers -->
 <!-- \faicon{floppy-o} `r bibliography_entries("publications.bib") %>% filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) %>% summarize(N = n()) %>% pull(N)` open-source software packages -->
 
 <!-- Full List Available on Google Scholar: https://scholar.google.com/citations?hl=en&user=rXaKU0EAAAAJ -->
@@ -151,20 +170,48 @@ for (group in skills_formatted$group) {
 <!-- bibliography_entries("publications.bib") %>% -->
 <!--   filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) -->
 <!-- ``` -->
-
-
-## Papers
+## Working Papers
 ```{r}
 bibliography_entries("publications.bib") %>%
   filter(
     id %in% c(
-      "balesdent_advanced_2016",
-      "chaudhuri_nasa_2015",
-      "price_open-sourced_2020",
-      "hinrichs_understanding_2020"
+      "nguyen_house_2021",
+      "kishor_measuring_2022",
+      "nguyen_identifying_2022"
     )
   ) %>%
   arrange(desc(issued))
 ```
+
+&nbsp;
+
+# Teaching Experience
+
+**Instructor:** Principles of Macroeconomics x6 $\bullet$ Principles of Microeconomics x2 $\bullet$  Introduction to Economics
+
+**Teaching Assistant:** Intermediate Microeconomics $\bullet$ Principles of Macroeconomics x3 $\bullet$ Principles of Microeconomics x3
+
+&nbsp;
+
+# Memberships
+American Economic Association
+
+Midwest Economic Association
+
+National Association for Business Economics
+
+&nbsp;
+
+# Awards and Honors
+```{r award}
+awards %>%
+  tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, when, with, where, why)
+```
+
+# References
+
+Provided upon request
+
 
 <!-- \fancyfoot[LO,LE]{\footnotesize This resume was generated on `r Sys.time()` using vitae R package and custom LaTeX template (\href{https://github.com/natbprice/cv}{github.com/natbprice/cv})} -->

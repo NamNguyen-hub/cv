@@ -1,8 +1,9 @@
 jobId,position.desc,employer.desc,category,descId,accomplishments
-6,Graduate Teaching Assistant,University of Wisconsin - Milwaukee,economics,a,"Clearly communicated statistics and econometric theory, with the express purpose of applying it to analyze real data"
-4,Graduate Teaching Assistant,University of Illinois at Chicago,economics,a,Taught a diverse set of students with a wide range of technical backgrounds
+6,Graduate Teaching Assistant,University of Wisconsin - Milwaukee,economics,b,"Clearly communicated statistics and economic theory, with the express purpose of applying it to analyze real data"
+6,Graduate Teaching Assistant,University of Wisconsin - Milwaukee,economics,a,Taught a diverse set of students with a wide range of technical backgrounds
 5,Research Assistant,America Institutes for Research,business,a,Designed and quality controlled standardized tests for public grade school students
-3,Life Insurance Underwriting Assistant,Transamerica,business,a,"Reviewed and audited applications, correspondence, legal documents, and reports to comply with business processing rules"
-2,International Trade Analyst - Intern,SBCD Illinois International Trade Center,economics,b,"Organized events and seminars to promote exporting, hosting up to 70 business representatives"
-2,International Trade Analyst - Intern,SBCD Illinois International Trade Center,economics,a,Conducted research in foreign markets to provide information and services to help small businesses export
-1,Undergraduate Research Assistant,Coe College,economics,a,"Researched in economic growth models, theories and analytical, empirical studies"
+4,Graduate Teaching Assistant,University of Illinois at Chicago,economics,a,Assisted teaching undergraduate students in introductory and intermediate economics courses
+3,Life Insurance Underwriting Assistant,Transamerica,business,a,"Reviewed and audited applications, correspondences, reports and legal documents to comply with business processing rules"
+2,International Trade Analyst - Intern,SBDC Illinois International Trade Center,economics,b,"Organized events and seminars to promote export, hosting up to 70 business representatives"
+2,International Trade Analyst - Intern,SBDC Illinois International Trade Center,economics,a,Conducted research in foreign markets to provide information and services to help small businesses export
+1,Undergraduate Research Assistant,Coe College,economics,a,Researched economic growth models with a focus on developing countries
