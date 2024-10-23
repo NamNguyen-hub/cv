@@ -1,0 +1,21 @@
+group,skill,details
+statistics,machine learning,
+statistics,neural network,
+statistics,quantitative & qualitative methods,
+statistics,Bayesian inference,
+statistics,Big data analysis,
+statistics,time series models,
+statistics,cross-validation,
+statistics,uncertainty quantification,
+programming languages,Python,"NumPy, Scikit-Learn, Pandas, matplotlib, seaborn, tensorflow"
+programming languages,R,
+programming languages,SQL,
+programming languages,Matlab,
+programming languages,C++,
+programming languages,Stata,
+communication,presentations,
+communication,data analysis reports,"Rmarkdown, Jupyter"
+communication,data visualization,ggplot2
+software development,source control,Git
+numerical methods,optimization,"stochastic, multi-start"
+numerical methods,differential equations,

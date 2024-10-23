@@ -1,15 +1,24 @@
 %% Template for a CV
 %% Author: Rob J Hyndman
+%% \usepackage[scaled=0.86]{DejaVuSansMono}
 
-\documentclass[$if(fontsize)$$fontsize$$else$10pt$endif$,$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$$else$letterpaper$endif$,$for(classoption)$$classoption$$sep$,$endfor$]{article}
+%%\documentclass[$if(fontsize)$$fontsize$$else$9pt$endif$,$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$$else$letterpaper$endif$,$for(classoption)$$classoption$$sep$,$endfor$]{article}
+
+
+\documentclass[9pt,letterpaper]{article}
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-\usepackage[scaled=0.86]{DejaVuSansMono}
+\usepackage[scaled=0.7]{DejaVuSansMono}
 \usepackage[sfdefault,lf,t]{carlito}
 $endif$
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+
+\usepackage{colortbl}
+\arrayrulecolor{white}
+
+\usepackage{tabularray}
 
 % Change color to blue
 \usepackage{color,xcolor}
@@ -75,7 +84,7 @@ $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $else$
 \usepackage{geometry}
-\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=1.75cm}
 $endif$
 
 $if(listings)$
@@ -194,22 +203,22 @@ $if(jobtitle)$\moveleft.5\hoffset\centerline{$jobtitle$}$endif$
 \centerline{
 %address
 $if(address)$\faicon{map-marker} $address$ \hspace{1 mm} $endif$%
-%github
-$if(github)$\faicon{github} \href{http://github.com/$github$}{\color{black} $github$} \hspace{1 mm} $endif$%
 %twitter
 $if(twitter)$\faicon{twitter} \href{http://twitter.com/$twitter$}{\color{black} $twitter$} \hspace{1 mm} $endif$%
 %phone
 $if(phone)$\faicon{phone} $phone$ \hspace{1 mm} $endif$%
 %email
 $if(email)$\faicon{envelope} \href{mailto:}{\color{black} $email$} \hspace{1 mm} $endif$%
-%linkedin
-$if(linkedin)$\faicon{linkedin} \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$} \hspace{1 mm} $endif$%
 %scholar
 $if(scholar)$\faicon{google} \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$} \hspace{1 mm} $endif$%
 %orcid
 $if(orcid)$\faicon{openid} \href{https://orcid.org/$orcid$}{$orcid$} \hspace{1 mm} $endif$%
 %website
-$if(www)$\faicon{home} \href{http://$www$}{$www$}\hspace{1 mm} $endif$%
+$if(www)$\faicon{home} \href{http://$www$}{Website}\hspace{1 mm} $endif$%
+%github
+$if(github)$\faicon{github} \href{http://github.com/$github$}{\color{black} GitHub} \hspace{1 mm} $endif$%
+%linkedin
+$if(linkedin)$\faicon{linkedin} \href{https://www.linkedin.com/in/$linkedin$}{Linkedin} \hspace{1 mm} $endif$%
 }
 
 \vspace{2 mm}
@@ -288,10 +297,10 @@ $if(www)$\faicon{home} & \href{http://$www$}{$www$}\\$endif$% %
 $if(phone)$\faicon{phone} & $phone$\\$endif$%
 $if(email)$\faicon{envelope} & $email$\\$endif$%
 $if(twitter)$\faicon{twitter} & \href{https://twitter.com/$twitter$}{@$twitter$}\\$endif$%
-$if(github)$\faicon{github} & \href{https://github.com/$github$}{$github$}\\$endif$%
 $if(linkedin)$\faicon{linkedin} & \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}\\$endif$%
 $if(scholar)$\faicon{google} & \href{https://scholar.google.com/citations?user=$scholar$}{$scholar$}\\$endif$%
 $if(orcid)$\faicon{openid} & \href{https://orcid.org/$orcid$}{$orcid$}\\$endif$%
+$if(github)$\faicon{github} & \href{https://github.com/$github$}{$github$}\\$endif$%
 }
 
 
@@ -345,3 +354,4 @@ $for(include-after)$
 $include-after$
 $endfor$
 \end{document}
+

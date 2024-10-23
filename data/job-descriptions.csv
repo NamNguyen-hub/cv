@@ -1,9 +1,13 @@
 jobId,position.desc,employer.desc,category,descId,accomplishments
-6,Graduate Teaching Assistant,University of Wisconsin - Milwaukee,economics,b,"Clearly communicated statistics and economic theory, with the express purpose of applying it to analyze real data"
-6,Graduate Teaching Assistant,University of Wisconsin - Milwaukee,economics,a,Taught a diverse set of students with a wide range of technical backgrounds
-5,Research Assistant,America Institutes for Research,business,a,Designed and quality controlled standardized tests for public grade school students
-4,Graduate Teaching Assistant,University of Illinois at Chicago,economics,a,Assisted teaching undergraduate students in introductory and intermediate economics courses
-3,Life Insurance Underwriting Assistant,Transamerica,business,a,"Reviewed and audited applications, correspondences, reports and legal documents to comply with business processing rules"
-2,International Trade Analyst - Intern,SBDC Illinois International Trade Center,economics,b,"Organized events and seminars to promote export, hosting up to 70 business representatives"
-2,International Trade Analyst - Intern,SBDC Illinois International Trade Center,economics,a,Conducted research in foreign markets to provide information and services to help small businesses export
-1,Undergraduate Research Assistant,Coe College,economics,a,Researched economic growth models with a focus on developing countries
+8,Model Risk Management Analyst,Wintrust Financial Corporation,business,a,"Conducted model validation for models used in the bank to ensure compliance with SR 11-7 regulations. Prepared concise validation reports for upper management review and ensured that any findings were appropriately addressed by the model owners"
+8,Model Risk Management Analyst,Wintrust Financial Corporation,business,b,"Spearheaded process improvements within the Model Risk Management (MRM) department by redesigning the template for validation and periodic review reports. Streamlined the documentation process, resulting in increased efficiency, consistency, and clarity in reporting"
+8,Model Risk Management Analyst,Wintrust Financial Corporation,business,c,"Developed challenger models utilized during model validation/review for various types of models. Actively automated validation testing processes whenever feasible, optimizing resource allocation"
+7,PhD Candidate & Instructor,University of Wisconsin - Milwaukee,economics,b,"Clearly communicated statistics and economic theory, with the express purpose of applying it to analyze real data"
+7,PhD Candidate & Instructor,University of Wisconsin - Milwaukee,economics,a,Taught a diverse set of students with a wide range of technical backgrounds
+6,Research Assistant,America Institutes for Research,business,a,Designed and quality controlled standardized tests for public grade school students
+5,Graduate Teaching Assistant,University of Illinois at Chicago,economics,a,Assisted teaching undergraduate students in introductory and intermediate economics courses
+4,Life Insurance Underwriting Assistant,Transamerica,business,a,"Reviewed and audited applications, correspondences, reports and legal documents to comply with business processing rules"
+3,Student Manager,Sodexo,business,a,Directly supervised and evaluated 10 workers serving food to more than 500 customers daily
+3,Student Manager,Sodexo,business,b,"Delegated tasks, resolved problems and made decisions when necessary. Trained and guided new employees"
+2,Intern,SBDC Illinois International Trade Center,economics,b,"Organized events and seminars to promote export, hosting up to 70 business representatives"
+2,Intern,SBDC Illinois International Trade Center,economics,a,Conducted research in foreign markets to provide information and services to help small businesses export

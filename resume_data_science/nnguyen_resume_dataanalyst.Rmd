@@ -1,0 +1,323 @@
+---
+name: Nam Nguyen, PhD
+docname: "Updated: Jan 2022 - Resume"
+fontawesome: yes
+address: "Milwaukee, Wisconsin"
+phone: "+1 414 207 7507"
+email: "nam.nguyen.thn@gmail.com"
+linkedin: namnguyen7
+www: "namnguyen-hub.github.io"
+date: "`r format(Sys.time(), '%B %Y')`"
+github: namnguyen-hub
+output: function(...) {source('price_entries.R');vitae:::set_entry_formats(price_entries);vitae::cv_document(..., template = "pricetemplate.tex", citation_package = "biblatex")}
+---
+
+```{r setup, include=FALSE}
+# To save log files
+# rmarkdown::render("resume/nprice_resume.Rmd", clean = FALSE)
+
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE)
+
+library(tidyverse)
+library(vitae)
+library(lubridate)
+library(glue)
+library(rlang)
+```
+
+```{r loadData}
+
+# Education
+education <- data.table::fread("../data/education.csv",
+                               encoding = "UTF-8") %>%
+  as_tibble() %>%
+  mutate(
+    begin = as.Date(begin, format = "%m/%d/%y"),
+    end = as.Date(end, format = "%m/%d/%y")
+  )
+
+# Job titles
+job.titles <- data.table::fread("../data/job-titles.csv",
+                                encoding = "UTF-8") %>%
+  as_tibble() %>%
+  mutate(
+    begin = as.Date(begin, format = "%m/%d/%y"),
+    end = as.Date(end, format = "%m/%d/%y")
+  )
+
+# Skills
+skills <- data.table::fread("../data/skills.csv",
+                            encoding = "UTF-8") %>%
+  as_tibble()
+
+# Job descriptions
+job.descriptions <-
+  data.table::fread("../data/job-descriptions.csv",
+                    encoding = "UTF-8") %>%
+  as_tibble()
+
+# Awards
+awards <- data.table::fread("../data/awards.csv",
+                            encoding = "UTF-8") %>%
+  as_tibble()
+
+# Teaching
+teaching <- data.table::fread("../data/teaching.csv",
+                            encoding = "UTF-8") %>%
+  as_tibble()
+
+```
+
+
+<!--# Professional Profile-->
+&nbsp;
+&nbsp;
+
+I am an experienced Applied Econometrician and Data Scientist with cutting-edge training in methodologies such as *State-Space Model, Forecasting Techniques, Machine Learning, Time Series Analysis, Quantitative Methods and Data Visualization*. Additionally to the macro econometrics techniques that I specialized in, I am also proficient in model testing and validation, the methodologies I used include *Model Selection, Model Average, K-fold Cross Validation* and *Boostrapping*. I am experienced in statistical software such as *Python, R, Matlab, SAS* and *Stata*. I am also familiar with database management language such as *SQL* and data visualization tools such as *Tableau, R(ggplot2) and Python(matplotlib)*. Currently, I am looking for an full time data analyst position where I can apply my expertises.
+
+&nbsp;
+
+# Areas of Expertise
+
+\begin{tblr}{width=1\textwidth, colspec={X[0.1,l]X[2,l]X[0.1,l]X[2,l]X[0.1,l]X[2,l]X[0.1,l]X[2.5,l]}}
+  $\bullet$ & Econometrics & $\bullet$ & Machine Learning & $\bullet$ & Data Analysis & $\bullet$ & Structural Modelling \\
+  $\bullet$ & Quantitative Methods & $\bullet$ & Forecasting & $\bullet$ & Cross-validation & $\bullet$ & Uncertainty Quantification \\
+\end{tblr}
+
+&nbsp;
+
+# Data Science Skills
+## Methodologies and Tools
+\begin{tblr}{width=1\textwidth, colspec={X[0.1,l]X[2,l]X[6.8,l]}}
+  $\bullet$ & Time Series: & {\it ARIMA, VAR, Stochastic process, State-space models, Kalman Filter, Forecasting} \\
+  $\bullet$ & Machine Learning: & {\it KNN, Neural Networks, LDA, QDA, Random Forest, Bagging, Boosting} \\
+  $\bullet$ & Causal Inferences: & {\it A/B Testing, Difference in Difference, Regression Discontinuity, Instrumental Variables} \\
+  $\bullet$ & Panel Regression: & {\it Fixed Effects, Random Effects, Quantile Regressions} \\
+  $\bullet$ & Bayesian Methods: & {\it Gibbs Sampling, Metropolis-Hasting Algorithm} \\
+  $\bullet$ & Resampling Methods: & {\it K-fold Cross-validation, Boostrapping} \\
+  $\bullet$ & Model Comparison: & {\it Model Selection (Ridge, Lasso, Elastic Net, Markov Chain Monte Carlo Model Comparison MC3), Model Average (Bates and Granger, Bayesian Model Average)} 
+\end{tblr}
+
+## Computer Programming
+\begin{tblr}{width=1\textwidth, colspec={X[0.1,l]X[2,l]X[6.8,l]}}
+  $\bullet$ & Statistical Tools: & {\it Python (numpy, scikit-learn, tensorflow), R, Matlab, C++, Stata, SAS} \\
+  $\bullet$ & Data Management: & {\it Python (Pandas), MySQL, Tableau} \\
+  $\bullet$ & Bayesian Analysis Tools: & {\it Dynare, Winbug}\\
+  $\bullet$ & Scripting Tools: & {\it Latex, RMarkdown, MS Office} \\
+\end{tblr}
+
+&nbsp;
+
+# Research Projects
+
+<!-- \faicon{book} `r bibliography_entries("publications.bib") %>% filter(type == "chapter") %>% summarize(N = n()) %>% pull(N)` book chapters -->
+
+<!-- \faicon{file-text} `r bibliography_entries("publications.bib") %>% filter(type == "article-journal") %>% summarize(N = n()) %>% pull(N)` peer-reviewed journal publications -->
+
+<!-- \faicon{pencil} `r bibliography_entries("publications.bib") %>% filter(type == "paper-conference") %>% summarize(N = n()) %>% pull(N)` thesis papers -->
+
+<!-- \faicon{pencil} `r bibliography_entries("publications.bib") %>% summarize(N = n()) %>% pull(N)` thesis papers -->
+<!-- \faicon{floppy-o} `r bibliography_entries("publications.bib") %>% filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) %>% summarize(N = n()) %>% pull(N)` open-source software packages -->
+
+<!-- Full List Available on Google Scholar: https://scholar.google.com/citations?hl=en&user=rXaKU0EAAAAJ -->
+
+<!-- ## Open Source Software -->
+
+<!-- ```{r} -->
+<!-- bibliography_entries("publications.bib") %>% -->
+<!--   filter(id %in% c("price_radsets_2019", "price_tvdiff_2019", "price_huntfishapp_2019")) -->
+<!-- ``` -->
+
+<!-- "nguyen_identifying_2022" -->
+<!--       "kishor_measuring_2022"-->
+<!--       "nguyen_house_2021"-->
+
+&nbsp;
+
+1. **Identifying Unsustainable Credit Gap** (January 2022 - August 2022)
+\smallskip
+    + This project implements model selection and model average to overcome model uncertainty problem and improve performance of total credit gap as a predictor of financial crises. The model uses quarterly panel data of 50 years across 40 countries. The methods used are *Fixed Effect Within Estimator, Logistic Regression, Model Selection, Bayesian Model Average, Partial Area Under the ROC Curve (pAUC), Index Synthesizing, K-fold Cross-validation*, and *Policy Function Optimization.*
+
+<!--
+I utilized model averaging methods to overcome model uncertainty problems when using credit to GDP ratio gaps to predict future systemic financial crises in a discrete binary outcome setting. The panel data consists of 40 countries.
+
+abstract: This paper aims to overcomes model uncertainty in using the credit gap as an early warning indicator (EWI) of systemic financial crises in a binary outcome setting. I propose using model averaging of different credit gap measurements to achieve better averaged model fit and out-of-sample prediction. I also propose a novel, superior criteria to judge the performance of an EWI than the one currently popularly used in the literature. The empirical results showed that the Bayesian averaged model I proposed could synthesize a single credit gap that out-performs any other popularly studied credit gap measurements in terms of an early warning indicator
+
+# Summary. An optional shortened abstract.
+summary: Implements model averaging to improve the performance total credit gap as a predictor of financial crises. The model uses quarterly panel data of 50 years across 40 countries. The methods used are Bayesian model average, partial Area under the ROC curve (pAUC), index synthesizing, n-fold cross-validation, and policy function optimization.
+-->
+
+\smallskip
+
+2. **Measuring Credit Gap** (January 2021 - December 2021)
+\smallskip
+    + This project utilizes the cyclical property of short-run component of a nonstationary series to improve out-of-sample prediction of its future changes. We set up a horse race for forecasting models and implement forecast combination of multiple credit gap measurements to improve predictive performance on future total credit changes. The methods used includes *Trend-Cycle Decomposition, Bate-Granger Forecast Combination* and *One-sided Adaptive Model Average.*
+    + Submitted for review in the Journal of Business Cycle Research (January 2023)
+
+<!--
+abstract: This paper proposes a new method to measure the credit gap - (deviation of credit-to-GDP ratio from its long-run trend) based on its out-of-sample forecast performance. I decompose the total credit-GDP ratio series into short-run deviations and long-run trends using many relevant and popularly practiced methods. I then combine the cycles to construct a singular cyclical series with the highest predictive power on out- of-sample forecasts. The empirical results suggest that by using forecast error weighted average combination, we can produce a measurement of credit gaps that provides superior performance as an early indicator of turning points.
+
+# Summary. An optional shortened abstract.
+summary: Decomposes Credit series into long-run and short-run components. We use the cyclical property of the short-run component to improve out-of-sample prediction of the total credit series. The methods we used includes the Bate-Granger forecast combination, one-sided adaptive average.
+
+Decomposes Credit series into long-run and short-run components. We use the cyclical property of the short-run component to improve out-of-sample prediction of the total credit series. The methods we used includes Unobserved Component Model, Bate-Granger forecast combination, one-sided adaptive model average. 
+-->
+
+\smallskip
+
+3. **House Prices and Credit Cycles** (June 2019 - Dec 2020)
+\smallskip
+    + This project exploits a model that allows for household credit and house prices to be jointly determined in both short run and long run. The quarterly data used in this paper span across 17 developed countries for 30 years. The methodology used in this project allows for measuring the directions and magnitudes of the effects the two variables have on each other. More importantly, the timing of the effect can also be estimated using a *State-Space Framework*. The methodologies used are *Vector Autoregression, Bayesian Inference (Random-Walk Metropolis-Hasting algorithm), Kalman Filter, State-Space models* and *Non-linear Impulse Response Function*.
+
+<!--    
+    I estimated a causal state-space model to examine the dynamic relationship between housing prices (asset prices) and household credit time series data
+     both in the long-run and short-run.
+
+abstract: This paper exploits a model that allows for household credit and house prices to be jointly determined in both short run and long run. The methodology I use in this chapter allows for measuring the directions and magnitudes of the effects the two variables have on each other. More importantly, the timing of the effect can also be estimated using a state-space framework. The model empirical result suggests that, in the short run, a positive shock to house prices is associated with a future increase in household credit above its long-run trend. This result is robust in multiple structural specifications of the trend-cycle decomposition methods.
+
+# Summary. An optional shortened abstract.
+summary: Estimation of causal structural models regarding Housing Price and Housing Credit using Bayesian Inference, Random-Walk Metropolis-Hasting, Kalman Filters, State-Space models techniques.
+
+Estimation of causal structural models regarding Housing Price and Housing Credit using Bayesian Inference, Random-Walk Metropolis-Hasting, Kalman Filters, State-Space models techniques
+-->
+
+<!--
+# Data Science Skills
+&nbsp;
+
+**Programming Languages:**
+
+$\bullet$ Python (numpy, pytorch, scikit-learn, pandas, matplotlib, seaborn, tensorflow) $\bullet$ SQL $\bullet$ Matlab $\bullet$ C++ $\bullet$ Stata $\bullet$ SAS $\bullet$ Tableau
+
+$\bullet$ R (dplyr, zoo, caret, vars, plm, xts, forecast, knitr, reshape2, janitor, pROC) 
+
+**Statistics:** machine learning $\bullet$ neural network $\bullet$ Bayesian inference $\bullet$ quantitative methods $\bullet$ panel data analysis $\bullet$ time series models $\bullet$ cross-validation $\bullet$ uncertainty quantification $\bullet$ forecasting models
+
+**Software Development:** source control (Git)
+
+**Numerical Methods:** optimization (stochastic, multi-start) $\bullet$ differential equations
+
+**Communication:** presentations $\bullet$ data analysis reports (Rmarkdown, Jupyter) $\bullet$ data visualization (ggplot2)
+-->
+<!-- ```{r} -->
+<!-- skills_formatted <- skills %>% -->
+<!--   mutate(skill = if_else(is.na(details)|details=="", glue("{skill}"), glue("{skill} ({details})"))) %>% -->
+<!--   group_by(group) %>% -->
+<!--   summarize(skills = glue_collapse(skill, sep = " $\\bullet$ ")) -->
+<!-- ``` -->
+
+<!-- ```{r, results='asis', width = 40000} -->
+<!-- for (group in skills_formatted$group) { -->
+<!--   cat( -->
+<!--     glue("\\textbf{<<tools::toTitleCase(group)>>}:", .open = "<<", .close = ">>"), -->
+<!--     filter(skills_formatted, group == !!group)$skills, -->
+<!--     "\n\n\n" -->
+<!--   ) -->
+<!-- } -->
+<!-- ``` -->
+
+# Professional Experience
+
+```{r experience}
+job.titles %>% 
+  # Only 5 most recent jobs
+  arrange(desc(begin)) %>% 
+  filter(year(begin) >= 2017) %>%
+  # Join job descriptions
+  left_join(job.descriptions) %>% 
+  # Arrange by descending begin date
+  arrange(desc(begin), descId) %>% 
+  # Format as detailed entries
+  detailed_entries(
+    what = position,
+    when = as.character(
+      glue("{month(begin, label = TRUE, abbr = TRUE)} {year(begin)} - 
+           {if_else(!is.na(end), 
+           paste(month(end, label = TRUE, abbr = TRUE), year(end)), 'present')}")),
+    with = employer,
+    where = glue("{city}, {region}, {country}"),
+    why = accomplishments)
+```
+
+# Teaching Experience
+
+**Instructor:** Principles of Macroeconomics x6 $\bullet$ Principles of Microeconomics x2 $\bullet$  Introduction to Economics
+
+**Teaching Assistant:** Intermediate Microeconomics $\bullet$ Principles of Macroeconomics x3 $\bullet$ Principles of Microeconomics x3
+
+&nbsp;
+
+# Education
+```{r education, results = "asis"}
+
+education %>%
+  arrange(desc(end), begin) %>%
+  mutate(what = degree,
+         when = year(end),
+         with = university,
+         where = glue("{city}, {region}, {country}")) %>% 
+  select(what, when, with, where) %>% 
+  arrange(desc(when)) %>% 
+  detailed_entries(
+    what,
+    when,
+    with,
+    where,
+    .protect = F
+  )
+
+```
+
+
+
+# Certificates
+**SQL** -  HackerRank
+
+**Machine Learning** with Python - Kaggle
+
+&nbsp;
+
+
+<!--
+# Research Interests
+**Primary:**   Applied Macroeconomics $\bullet$ Housing and Financial Markets $\bullet$ Forecasting
+
+**Secondary:** Bayesian Econometrics $\bullet$ State-space models $\bullet$ Optimization
+-->
+
+
+
+
+<!--
+# Selected Course Projects
+$\bullet$ Logistic regression, random forest, feature selection, cross validation, parameter tuning and prediction on big datasets 
+
+$\bullet$ Implemented recurrent neural network with Keras $\bullet$ Data structures & algorithms in Python 
+&nbsp;
+-->
+
+
+# Memberships
+American Economic Association
+
+Midwest Economic Association
+
+National Association for Business Economics
+
+&nbsp;
+
+# Awards and Honors
+```{r award}
+awards %>%
+  tidyr::fill(-why) %>%
+  vitae::detailed_entries(what, when, with, where, why)
+```
+
+# References
+
+Provided upon request
+
+
+<!-- \fancyfoot[LO,LE]{\footnotesize This resume was generated on `r Sys.time()` using vitae R package and custom LaTeX template (\href{https://github.com/natbprice/cv}{github.com/natbprice/cv})} -->
